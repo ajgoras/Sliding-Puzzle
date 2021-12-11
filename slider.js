@@ -49,14 +49,14 @@ function prevPhoto() {
 }
 
 function setImg() {
-    tiles = document.getElementsByClassName('tile');
-    for (let i = 0; i < tiles.length-1; i++) {
-        //tiles[i].style.cssText = "background-image: url(maniek.jpg)";
+    blocks = document.getElementsByClassName('block');
+    for (let i = 0; i < blocks.length-1; i++) {
+        //blocks[i].style.cssText = "background-image: url(maniek.jpg)";
         if (activephoto==0) {
-            tiles[i].style.backgroundImage = "url('ritka.jpg')";
+            blocks[i].style.backgroundImage = "url('ritka.jpg')";
         }
         if (activephoto==1) {
-            tiles[i].style.backgroundImage = "url('maniek.jpg')";
+            blocks[i].style.backgroundImage = "url('maniek.jpg')";
         }
     }
     openSlider();
