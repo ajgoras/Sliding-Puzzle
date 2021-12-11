@@ -28,9 +28,8 @@ function nextPhoto() {
         activephoto = 0;
     }
     document.getElementById("slide1").src = photos[whatPhoto];
-
-    document.getElementById('arrow-right').className = 'arrowslideR';
-    setTimeout(() => {  document.getElementById('arrow-right').className = 'null'; }, 700);
+    document.querySelector('#arrow-right').classList.add('arrowslideR');
+    setTimeout(() => {  document.querySelector('#arrow-right').classList.remove('arrowslideR'); }, 700);
 }
 
 function prevPhoto() {
@@ -45,8 +44,8 @@ function prevPhoto() {
     }
     document.getElementById("slide1").src = photos[whatPhoto];
 
-    document.getElementById('arrow-left').className = 'arrowslideL';
-    setTimeout(() => {  document.getElementById('arrow-left').className = 'null'; }, 700);
+    document.querySelector('#arrow-left').classList.add('arrowslideL');
+    setTimeout(() => {  document.querySelector('#arrow-left').classList.remove('arrowslideL'); }, 700);
 }
 
 function setImg() {

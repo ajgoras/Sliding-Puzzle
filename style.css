@@ -194,38 +194,52 @@ body{
     height: 12px;
     background-color: #3a3a3a;
     display: inline-block;
+    border: rgba(245, 245, 245, 0.281) solid 1px;
     border-radius: 100%;
     margin-right: 10px;
 }
 
-#arrow-right{
+.arrow{
+    width: 0; 
+    height: 0; 
     margin: 10px;
     cursor: pointer;
+    display: inline-block;
+}
+
+#arrow-right{
+    border-right: 0px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent; 
+    border-left: 20px solid #1b1b1bda;
 }
 #arrow-left{
-    margin: 10px;
-    cursor: pointer;
+    border-left: 0px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent; 
+    border-right: 20px solid #1b1b1bda;
 }
 
 .arrowslideR {
     animation-name: arrowslideR;
-    animation-duration: 1.4s;
+    animation-duration: 1.3s;
     animation-iteration-count:1;
     transform-origin: bottom;
     animation-timing-function: ease;
 }
 
 @keyframes arrowslideR {
-    0%   { transform: scale(1,1)    translateX(0); }
-    10%  { transform: scale(1.1,.9) translateX(0); }
-    30%  { transform: scale(.9,1.1) translateX(20px); }
-    50%  { transform: scale(1,1)    translateX(0); }
-    100% { transform: scale(1,1)    translateX(0); }
+    0%   { transform: scale(1,1)    translateX(0);}
+    10%  { transform: scale(1.1,.9) translateX(0);}
+    30%  { transform: scale(.9,1.1) translateX(20px);}
+    50%  { transform: scale(1,1)    translateX(0);}
+    95%  { transform: scale(1,1)    translateX(15px);}
+    100% { transform: scale(1,1)    translateX(15px);}
 }
 
 .arrowslideL {
     animation-name: arrowslideL;
-    animation-duration: 1.4s;
+    animation-duration: 1.3s;
     animation-iteration-count:1;
     transform-origin: bottom;
     animation-timing-function: ease;
@@ -234,9 +248,10 @@ body{
 @keyframes arrowslideL {
     0%   { transform: scale(1,1)    translateX(0); }
     10%  { transform: scale(1.1,.9) translateX(0); }
-    30%  { transform: scale(.9,1.1) translateX(-20px); }
+    30%  { transform: scale(.9,1.1) translateX(-20px);}
     50%  { transform: scale(1,1)    translateX(0); }
-    100% { transform: scale(1,1)    translateX(0); }
+    95%  { transform: scale(1,1)    translateX(-15px);}
+    100% { transform: scale(1,1)    translateX(-15px); }
 }
 
 
