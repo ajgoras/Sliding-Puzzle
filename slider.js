@@ -27,9 +27,9 @@ function nextPhoto() {
     if (activephoto==2) {
         activephoto = 0;
     }
-    document.getElementById("slide1").src = photos[whatPhoto];
     document.querySelector('#arrow-right').classList.add('arrowslideR');
     setTimeout(() => {  document.querySelector('#arrow-right').classList.remove('arrowslideR'); }, 700);
+    setTimeout(() => {  document.getElementById("slide1").src = photos[whatPhoto]; }, 100); 
 }
 
 function prevPhoto() {
@@ -42,10 +42,10 @@ function prevPhoto() {
     if (activephoto==-1) {
         activephoto = 1;
     }
-    document.getElementById("slide1").src = photos[whatPhoto];
-
+    
     document.querySelector('#arrow-left').classList.add('arrowslideL');
     setTimeout(() => {  document.querySelector('#arrow-left').classList.remove('arrowslideL'); }, 700);
+    setTimeout(() => {  document.getElementById("slide1").src = photos[whatPhoto]; }, 100); 
 }
 
 function setImg() {
