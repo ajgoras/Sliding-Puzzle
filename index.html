@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Puzzle</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    
+    <div class="bg" aria-hidden="true">
+        <div class="bg__dot"></div>
+        <div class="bg__dot"></div>
+        <div class="bg__dot"></div>
+    </div>
+
+    <div id="menudiv" class="revealtime">
+        <button onclick="openSlider()" id="selectImgBtn">Select Image</button>
+        <button onclick="mixPuzzles()" id="mixBtn">Mix Puzzle</button>
+    </div>
+    
+    <div id="slider">
+        <img onclick="prevPhoto()" class="arrow arrow-left" id="arrow-left" src="left.png" alt="" />
+        <div id="top-row">
+            <div id="slides-container">
+                <img id="slide1" class="slide active" src="ritka.jpg"/>
+            </div>
+        </div>
+        <div id="bottom-row">
+            <img onclick="nextPhoto()" class="arrow arrow-right" id="arrow-right" src="right.png" alt="" />
+        </div>
+    </div>
+    <div id="dots">
+        <div onclick="setImg1()" id="dot1" class="dot"></div>
+        <div onclick="setImg2()" id="dot2" class="dot"></div>
+    </div>
+    <div id="selectBtndiv">
+        <button onclick="setImg()" id="selectBtn">Select</button>
+    </div>
+    <div id="maindiv" class="revealtime">
+        <div id = "game">
+            <div class="block">1</div>   <!-- mozna zmienic tile zeby bylo bez przypsu na block -->
+            <div class="block">2</div>
+            <div class="block">3</div>
+            <div class="block">4</div>
+            <div class="block">5</div>
+            <div class="block">6</div>
+            <div class="block">7</div>
+            <div class="block">8</div>
+            <div class="block"></div>
+        </div>
+        <div id="winInfodiv">
+            <p id="winInfo" class="invisible">YOU WON!</p>
+        </div>
+    </div>
+    <photos id="photos">
+        <img id="photo0" src="ritka.jpg">
+        <img id="photo1" src="maniek.jpg">
+    </photos>
+    <script src="game.js"></script>
+    <script src="slider.js"></script>
+    <script src="revealing.js"></script>
+</body>
+</html>
