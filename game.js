@@ -14,7 +14,6 @@ function render(gameState) {
             column.style.left = `${columnIndex * 100}px`;
             column.style['background-position-y'] = `-${rowIndex * 100}px`
             column.style['background-position-x'] = `-${columnIndex * 100}px`
-            //gameField.appendChild(column);
         })
     })
 }
@@ -129,6 +128,17 @@ function mixPuzzles() {
 }
 
 
+function checkMove(x, y, emptyX, emptyY) {
+    if (x == emptyX || y == emptyY) {
+        if (x-emptyX==1||y-emptyY==1||x-emptyX==-1||y-emptyY==-1) {
+            return true;
+        }
+    }
+    else {
+        console.log('ruch niemozliwy');
+    }
+}
+
 function moveElement(element1, element2) {
     const tempTop = element1.style.top;
     const tempLeft = element1.style.left;
@@ -156,21 +166,19 @@ gameField.addEventListener('click', (event) => {
     var emptyX, emptyY;
     gameState.forEach((row, rowIndex) => {
         row.forEach((column, columnIndex) => {
-            if (column.innerText === '') {
+            if (column.id =='emptyBlock') {
                 emptyX = rowIndex;
                 emptyY = columnIndex;
             }
         })
     })
+    console.log(x, y);
 
-    if (
-        (y === emptyY && (x + 1 === emptyX || x - 1 === emptyX)) ||
-        (x === emptyX && (y + 1 === emptyY || y - 1 === emptyY))) {
-
-        moveElement(gameState[x][y], gameState[emptyX][emptyY]);
-        const temp = gameState[x][y];
+    if (checkMove(x, y, emptyX, emptyY)==true) {
+        let temp = gameState[x][y];
         gameState[x][y] = gameState[emptyX][emptyY];
         gameState[emptyX][emptyY] = temp;
+        moveElement(gameState[x][y], gameState[emptyX][emptyY]);
         winSound();
     }
 
