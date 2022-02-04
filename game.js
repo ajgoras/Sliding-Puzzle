@@ -8,24 +8,24 @@ const gameState = [
 ];
 
 function render(gameState) {
-    gameState.forEach((row, rowIndex) => {
-        row.forEach((column, columnIndex) => {
-            column.style.top = `${rowIndex * 100}px`;
-            column.style.left = `${columnIndex * 100}px`;
-            column.style['background-position-y'] = `-${rowIndex * 100}px`
-            column.style['background-position-x'] = `-${columnIndex * 100}px`
+    gameState.forEach((rowElement, rowIndex) => {
+        rowElement.forEach((columnElement, columnIndex) => {
+            columnElement.style.top = `${rowIndex * 100}px`;
+            columnElement.style.left = `${columnIndex * 100}px`;
+            columnElement.style['background-position-y'] = `-${rowIndex * 100}px`
+            columnElement.style['background-position-x'] = `-${columnIndex * 100}px`
         })
     })
 }
 
-var whatmix = 50; //random value
-var mixing = new Audio('mixing.mp3');
+let whatmix = 50; //random value
+let mixing = new Audio('mixing.mp3');
 function mixPuzzles() {
     mixing.play();
-    var r1 = gameState[0];
-    var r2 = gameState[1];
-    var r3 = gameState[2];
-    var whatmixCopy = whatmix;
+    let r1 = gameState[0];
+    let r2 = gameState[1];
+    let r3 = gameState[2];
+    let whatmixCopy = whatmix;
     function randomWhatMix() {
         whatmix = Math.floor(Math.random() * 4) + 1;
     }
@@ -139,21 +139,21 @@ function checkMove(x, y, emptyX, emptyY) {
     }
 }
 
-function moveElement(element1, element2) {
-    const tempTop = element1.style.top;
-    const tempLeft = element1.style.left;
+function moveElement(e1, e2) {
+    const tempTop = e1.style.top;
+    const tempLeft = e1.style.left;
 
-    element1.style.top = element2.style.top;
-    element1.style.left = element2.style.left;
+    e1.style.top = e2.style.top;
+    e1.style.left = e2.style.left;
 
-    element2.style.top = tempTop;
-    element2.style.left = tempLeft;
+    e2.style.top = tempTop;
+    e2.style.left = tempLeft;
 }
 
 
 gameField.addEventListener('click', (event) => {
     const target = event.target;
-    var x, y;
+    let x, y;
     gameState.forEach((row, rowIndex) => {
         row.forEach((column, columnIndex) => {
             if (column === target) {
@@ -163,7 +163,7 @@ gameField.addEventListener('click', (event) => {
         })
     })
 
-    var emptyX, emptyY;
+    let emptyX, emptyY;
     gameState.forEach((row, rowIndex) => {
         row.forEach((column, columnIndex) => {
             if (column.id =='emptyBlock') {
@@ -183,11 +183,11 @@ gameField.addEventListener('click', (event) => {
     }
 
 })
-var audio = new Audio('win.mp3');
+let audio = new Audio('win.mp3');
 function winSound() {
-    var r1 = gameState[0];
-    var r2 = gameState[1];
-    var r3 = gameState[2];
+    let r1 = gameState[0];
+    let r2 = gameState[1];
+    let r3 = gameState[2];
 
     if (r1[0].style['background-position-y'] == '0px' &&
     r1[0].style['background-position-x'] == '0px'&&
@@ -211,7 +211,7 @@ function winSound() {
     r3[2].style['background-position-x'] == '-200px') {
         audio.play();
         document.getElementById('winInfo').className = 'bounce-win';
-        setTimeout(() => {  document.getElementById('winInfo').className = 'invisible'; }, 4000);
+        setTimeout(() => {  document.getElementById('winInfo').className = 'invisible'; }, 3600);
     }
 }
 render(gameState);
