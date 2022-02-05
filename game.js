@@ -180,12 +180,12 @@ gameField.addEventListener('click', (event) => {
         gameState[x][y] = gameState[emptyX][emptyY];
         gameState[emptyX][emptyY] = temp;
         moveElement(gameState[x][y], gameState[emptyX][emptyY]);
-        winSound();
+        checkWin();
     }
 
 })
-let audio = new Audio('sound/win.mp3');
-function winSound() {
+let winSound = new Audio('sound/win.mp3');
+function checkWin() {
     let r1 = gameState[0];
     let r2 = gameState[1];
     let r3 = gameState[2];
@@ -211,7 +211,7 @@ function winSound() {
     r3[2].style['background-position-y'] == '-200px'&&
     r3[2].style['background-position-x'] == '-200px') {
         let winInfo = document.querySelector('#winInfo');
-        audio.play();
+        winSound.play();
         winInfo.classList.add('bounce-win');
         winInfo.classList.remove('invisible');
         setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
