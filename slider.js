@@ -5,7 +5,7 @@ let photos = [
     p1 = document.getElementById('photo0').src,
     p2 = document.getElementById('photo1').src
 ]
-var mixing = new Audio('mixing.mp3');
+
 function setImg1() {
     document.getElementById("slide1").src = "ritka.jpg"
     activephoto = 0;
@@ -81,3 +81,7 @@ function openSlider() {
     setTimeout(() => {  document.getElementById('selectImgBtn').className = 'null'; }, 700);
 
 }
+
+selectImgBtn.addEventListener('click', () => {
+    openSlider();
+});

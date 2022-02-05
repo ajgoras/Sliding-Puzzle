@@ -1,5 +1,6 @@
 const gameBlocks = document.querySelectorAll('.block');
 const gameField = document.querySelector("#game");
+let selectImgBtn = document.querySelector('#selectImgBtn');
 
 const gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
