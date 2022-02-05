@@ -359,13 +359,13 @@ body{
     opacity: 1;
 }
 
-.revealtime{
+.revealtime, .revealtime2{
     position: relative;
     transform: translateY(170px);
     opacity: 0;
     transition: all 1s ease;
 }
-.revealtime.delayed{
+.revealtime.delayed, .revealtime2.delayed{
     transform: translateY(0px);
     opacity: 1;
 }
