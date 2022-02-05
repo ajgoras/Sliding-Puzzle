@@ -18,6 +18,7 @@ function setImg2() {
 }
 
 function nextPhoto() {
+    let arrowRight = document.querySelector('#arrow-right');
     mixingSound.play();
     var whatPhoto = activephoto + 1;
     if (whatPhoto===2) {
@@ -27,12 +28,13 @@ function nextPhoto() {
     if (activephoto==2) {
         activephoto = 0;
     }
-    document.querySelector('#arrow-right').classList.add('arrowslideR');
-    setTimeout(() => {  document.querySelector('#arrow-right').classList.remove('arrowslideR'); }, 700);
+    arrowRight.classList.add('arrowslideR');
+    setTimeout(() => {  arrowRight.classList.remove('arrowslideR'); }, 700);
     setTimeout(() => {  document.getElementById("slide1").src = photos[whatPhoto]; }, 100); 
 }
 
 function prevPhoto() {
+    let arrowLeft = document.querySelector('#arrow-left');
     mixingSound.play();
     var whatPhoto = activephoto - 1;
     if (whatPhoto===-1) {
@@ -43,8 +45,8 @@ function prevPhoto() {
         activephoto = 1;
     }
     
-    document.querySelector('#arrow-left').classList.add('arrowslideL');
-    setTimeout(() => {  document.querySelector('#arrow-left').classList.remove('arrowslideL'); }, 700);
+    arrowLeft.classList.add('arrowslideL');
+    setTimeout(() => {  arrowLeft.classList.remove('arrowslideL'); }, 700);
     setTimeout(() => {  document.getElementById("slide1").src = photos[whatPhoto]; }, 100); 
 }
 
@@ -77,8 +79,8 @@ function openSlider() {
         document.getElementById("selectBtndiv").style.display = 'none';
         isSliderActive = 0;
     }
-    document.getElementById('selectImgBtn').className = 'bounce-4';
-    setTimeout(() => {  document.getElementById('selectImgBtn').className = 'null'; }, 700);
+    selectImgBtn.classList.add('bounce');
+    setTimeout(() => { selectImgBtn.classList.remove('bounce');}, 700);
 
 }
 

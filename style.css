@@ -126,15 +126,15 @@ body{
 }
 
 
-.bounce-4 {
-    animation-name: bounce-4;
+.bounce {
+    animation-name: bounce;
     animation-duration: 1.4s;
     animation-iteration-count:1;
     transform-origin: bottom;
     animation-timing-function: ease;
 }
 
-@keyframes bounce-4 {
+@keyframes bounce {
     0%   { transform: scale(1,1)    translateY(0); }
     10%  { transform: scale(1.1,.9) translateY(0); }
     30%  { transform: scale(.9,1.1) translateY(-20px); }

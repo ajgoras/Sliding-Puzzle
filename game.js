@@ -124,8 +124,8 @@ function mixPuzzles() {
         r3[2].style['background-position-y'] = '-200px';
         r3[2].style['background-position-x'] = '-200px';
     }
-    document.getElementById('mixBtn').className = 'bounce-4';
-    setTimeout(() => {  document.getElementById('mixBtn').className = 'null'; }, 700);
+    document.querySelector('#mixBtn').classList.add('bounce');
+    setTimeout(() => {  document.querySelector('#mixBtn').classList.remove('bounce') }, 700);
 }
 
 
@@ -210,9 +210,11 @@ function winSound() {
     r3[1].style['background-position-x'] == '-100px'&&
     r3[2].style['background-position-y'] == '-200px'&&
     r3[2].style['background-position-x'] == '-200px') {
+        let winInfo = document.querySelector('#winInfo');
         audio.play();
-        document.getElementById('winInfo').className = 'bounce-win';
-        setTimeout(() => {  document.getElementById('winInfo').className = 'invisible'; }, 3600);
+        winInfo.classList.add('bounce-win');
+        winInfo.classList.remove('invisible');
+        setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
     }
 }
 render(gameState);
