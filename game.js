@@ -20,9 +20,9 @@ function render(gameState) {
 }
 
 let whatmix = 50; //random value
-let mixing = new Audio('mixing.mp3');
+let mixingSound = new Audio('sound/mixing.mp3');
 function mixPuzzles() {
-    mixing.play();
+    mixingSound.play();
     let r1 = gameState[0];
     let r2 = gameState[1];
     let r3 = gameState[2];
@@ -184,7 +184,7 @@ gameField.addEventListener('click', (event) => {
     }
 
 })
-let audio = new Audio('win.mp3');
+let audio = new Audio('sound/win.mp3');
 function winSound() {
     let r1 = gameState[0];
     let r2 = gameState[1];

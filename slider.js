@@ -7,18 +7,18 @@ let photos = [
 ]
 
 function setImg1() {
-    document.getElementById("slide1").src = "ritka.jpg"
+    document.getElementById("slide1").src = "img/ritka.jpg"
     activephoto = 0;
-    mixing.play();
+    mixingSound.play();
 }
 function setImg2() {
-    document.getElementById("slide1").src = "maniek.jpg"
+    document.getElementById("slide1").src = "img/maniek.jpg"
     activephoto = 1;
-    mixing.play();
+    mixingSound.play();
 }
 
 function nextPhoto() {
-    mixing.play();
+    mixingSound.play();
     var whatPhoto = activephoto + 1;
     if (whatPhoto===2) {
         whatPhoto = 0;
@@ -33,7 +33,7 @@ function nextPhoto() {
 }
 
 function prevPhoto() {
-    mixing.play();
+    mixingSound.play();
     var whatPhoto = activephoto - 1;
     if (whatPhoto===-1) {
         whatPhoto = 1;
@@ -53,15 +53,15 @@ function setImg() {
     for (let i = 0; i < blocks.length-1; i++) {
         //blocks[i].style.cssText = "background-image: url(maniek.jpg)";
         if (activephoto==0) {
-            blocks[i].style.backgroundImage = "url('ritka.jpg')";
+            blocks[i].style.backgroundImage = "url('img/ritka.jpg')";
         }
         if (activephoto==1) {
-            blocks[i].style.backgroundImage = "url('maniek.jpg')";
+            blocks[i].style.backgroundImage = "url('img/maniek.jpg')";
         }
     }
     openSlider();
 }
-var click = new Audio('click.mp3');
+var click = new Audio('sound/click.mp3');
 
 function openSlider() {
     click.play();
