@@ -1,6 +1,12 @@
 const gameBlocks = document.querySelectorAll('.block');
 const gameField = document.querySelector("#game");
 let selectImgBtn = document.querySelector('#selectImgBtn');
+let mixBtn = document.querySelector('#mixBtn');
+let arrowLeft = document.querySelector('#arrow-left');
+let arrowRight = document.querySelector('#arrow-right');
+let dot1 = document.querySelector('#dot1');
+let dot2 = document.querySelector('#dot2');
+let selectBtn = document.querySelector('#selectBtn');
 
 const gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
@@ -155,9 +161,9 @@ function moveElement(e1, e2) {
 gameField.addEventListener('click', (event) => {
     const target = event.target;
     let x, y;
-    gameState.forEach((row, rowIndex) => {
-        row.forEach((column, columnIndex) => {
-            if (column === target) {
+    gameState.forEach((rowElement, rowIndex) => {
+        rowElement.forEach((columnElement, columnIndex) => {
+            if (columnElement === target) {
                 x = rowIndex;
                 y = columnIndex;
             }
@@ -165,9 +171,9 @@ gameField.addEventListener('click', (event) => {
     })
 
     let emptyX, emptyY;
-    gameState.forEach((row, rowIndex) => {
-        row.forEach((column, columnIndex) => {
-            if (column.id =='emptyBlock') {
+    gameState.forEach((rowElement, rowIndex) => {
+        rowElement.forEach((columnElement, columnIndex) => {
+            if (columnElement.id =='emptyBlock') {
                 emptyX = rowIndex;
                 emptyY = columnIndex;
             }
@@ -217,4 +223,7 @@ function checkWin() {
         setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
     }
 }
+
+mixBtn.addEventListener('click', () => mixPuzzles());
+
 render(gameState);

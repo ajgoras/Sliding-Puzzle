@@ -84,6 +84,9 @@ function openSlider() {
 
 }
 
-selectImgBtn.addEventListener('click', () => {
-    openSlider();
-});
+selectImgBtn.addEventListener('click', () => openSlider());
+arrowLeft.addEventListener('click', () => prevPhoto());
+arrowRight.addEventListener('click', () => nextPhoto());
+dot1.addEventListener('click', () => setImg1());
+dot2.addEventListener('click', () => setImg2());
+selectBtn.addEventListener('click', () => setImg());
