@@ -99,10 +99,8 @@ body{
     margin-top: 50px;
     position: relative;
 }
-#selectImgBtn{
-    margin-right: 50px;
-    height: 50px;
-    width: 100px;
+
+button{
     border: 0;
     cursor: pointer;
     border-radius: 500px;
@@ -118,6 +116,12 @@ body{
     background-size:50px 150px;
     color:whitesmoke;
     position: relative;
+}
+
+#selectImgBtn{
+    margin-right: 50px;
+    height: 50px;
+    width: 100px;
 
 }
 
@@ -143,19 +147,8 @@ body{
 }
 
 #mixBtn{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: -webkit-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -moz-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -o-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));
     height: 50px;
     width: 100px;
-    color: whitesmoke;
-    border-radius: 500px;
-    border: 0;
-    cursor: pointer;
-    transition: background 0.4s ease-out; 
-    background-size:150px 150px;
 }
 
 #mixBtn:hover{
@@ -258,22 +251,17 @@ body{
 
 
 #selectBtn{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: -webkit-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -moz-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -o-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));
     height: 50px;
     width: 100px;
-    color: whitesmoke;
-    border-radius: 500px;
-    border: 0;
-    cursor: pointer;
-    transition: background 0.4s ease-out; 
-    background-size:150px 150px;
 }
 #selectBtn:hover{
     background-position: 100px;
+}
+
+#addOwnImageBtn{
+    margin-left: 20px;
+    height: 50px;
+    width: 120px;
 }
 
 #selectBtndiv{
@@ -282,7 +270,14 @@ body{
     justify-content: center;
     align-items: center;
     position: relative;
+}
 
+input{
+    position: relative;
+}
+
+#ownImagediv{
+    display: none;
 }
 
 #game{
