@@ -1,6 +1,21 @@
 let imageInput = document.querySelector('#imgInput');
 let uploadedImage = '';
 let addOwnImageLabel = document.querySelector('#selectBtndiv label');
+let dots = document.querySelector('#dots');
+
+function addUploadedImageToGame(sourceImg) {
+    photos.push(sourceImg);
+    let newDot = document.createElement('div');
+    let newDotId = dots.childElementCount + 1;
+    newDot.id = 'dot' + newDotId;
+    newDot.className = 'dot';
+    dots.appendChild(newDot);
+    newDot.addEventListener('click', () => {
+        document.getElementById("slide1").style.backgroundImage = `url(${photos[newDotId-1]})`;
+        activephoto = newDotId-1;
+        mixingSound.play();
+    })
+}
 
 addOwnImageLabel.addEventListener('click', () => {
     let alertMessage = document.createElement('p');
@@ -11,7 +26,7 @@ addOwnImageLabel.addEventListener('click', () => {
     setTimeout(() => {
         alertdiv.style.display = 'none';
         alertdiv.removeChild(alertdiv.lastChild);
-    }, 4500);
+    }, 5500);
 })
 
 imageInput.addEventListener('change', function () {
@@ -25,6 +40,7 @@ imageInput.addEventListener('change', function () {
         openSlider();
         alertdiv.style.display = 'none';
         alertdiv.removeChild(alertdiv.lastChild);
+        addUploadedImageToGame(uploadedImage);
     });
     reader.readAsDataURL(this.files[0]);
 })

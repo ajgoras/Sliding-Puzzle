@@ -184,6 +184,8 @@ button{
 }
 
 #slide1{
+    background-image: url(img/ritka.jpg);
+    background-size: 150px;
     height: 150px;
     width: 150px;
     transition: all 1s;
