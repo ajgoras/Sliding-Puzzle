@@ -1,5 +1,7 @@
 var activephoto = 0;
 var isSliderActive = 0;
+var click = new Audio('sound/click.mp3');
+
 
 let photos = [
     p1 = document.getElementById('photo0').src,
@@ -63,7 +65,6 @@ function setImg() {
     }
     openSlider();
 }
-var click = new Audio('sound/click.mp3');
 
 function openSlider() {
     click.play();

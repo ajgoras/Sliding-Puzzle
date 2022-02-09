@@ -15,13 +15,14 @@ imageInput.addEventListener('change', function () {
 
 addOwnImageBtn.addEventListener('click', () => {
     let ownImagediv = document.querySelector('#ownImagediv');
-    if (ownImagediv.style.display == 'block') {
+    if (ownImagediv.style.display == 'flex') {
         ownImagediv.style.display = 'none';
     }
     else {
-        ownImagediv.style.display = 'block';
+        ownImagediv.style.display = 'flex';
     }
     addOwnImageBtn.classList.add('bounce');
+    click.play();
     setTimeout(() => {
         addOwnImageBtn.classList.remove('bounce');
     }, 700);
