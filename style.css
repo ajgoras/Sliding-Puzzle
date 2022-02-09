@@ -7,6 +7,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+    margin: 0;
 }
 
 #maindiv, .block{
@@ -96,7 +100,7 @@ body{
 
 #menudiv{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
     position: relative;
 }
 
@@ -116,6 +120,21 @@ button{
     background-size:50px 150px;
     color:whitesmoke;
     position: relative;
+}
+
+#alertdiv{
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #0c5460;
+    border: solid 1px #bee5eb;
+    position: relative;
+    padding: 8px;
+    background-color: #d1ecf1;
+}
+#alertdiv strong{
+    margin-left: 25px;
+    margin-right: 5px;
 }
 
 #selectImgBtn{
@@ -278,10 +297,10 @@ input[type="file"] {
     margin-left: 20px;
     height: 50px;
     width: 120px;
+    font-size: 13px;
     border: 0;
     cursor: pointer;
     border-radius: 500px;
-    font-size: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: -webkit-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
     background: -moz-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  

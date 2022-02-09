@@ -8,6 +8,7 @@ let dot1 = document.querySelector('#dot1');
 let dot2 = document.querySelector('#dot2');
 let selectBtn = document.querySelector('#selectBtn');
 let addOwnImageBtn = document.querySelector('#addOwnImageBtn');
+let alertdiv = document.querySelector('#alertdiv');
 
 const gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
