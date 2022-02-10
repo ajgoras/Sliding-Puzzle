@@ -2,6 +2,27 @@ let imageInput = document.querySelector('#imgInput');
 let uploadedImage = '';
 let addOwnImageLabel = document.querySelector('#selectBtndiv label');
 let dots = document.querySelector('#dots');
+let photosLs = JSON.parse(localStorage.getItem('ownPhotos'));
+
+function loadOwnImages() {
+    if (photosLs != null) {
+        for (let i = 0; i < photosLs.length; i++) {
+            photos[i] = photosLs[i];
+        }
+        for (let i = 2; i < photosLs.length; i++) {
+            let newDot = document.createElement('div');
+            let newDotId = dots.childElementCount + 1;
+            newDot.id = 'dot' + newDotId;
+            newDot.className = 'dot';
+            dots.appendChild(newDot);
+            newDot.addEventListener('click', () => {
+                document.getElementById("slide1").style.backgroundImage = `url(${photos[newDotId-1]})`;
+                activephoto = newDotId-1;
+                mixingSound.play();
+            })
+        }
+    }
+}
 
 function addUploadedImageToGame(sourceImg) {
     photos.push(sourceImg);
@@ -15,6 +36,7 @@ function addUploadedImageToGame(sourceImg) {
         activephoto = newDotId-1;
         mixingSound.play();
     })
+    localStorage.setItem('ownPhotos', JSON.stringify(photos));
 }
 
 addOwnImageLabel.addEventListener('click', () => {
@@ -44,3 +66,5 @@ imageInput.addEventListener('change', function () {
     });
     reader.readAsDataURL(this.files[0]);
 })
+
+loadOwnImages();
