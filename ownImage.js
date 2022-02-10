@@ -13,7 +13,7 @@ function addUploadedImageToGame(sourceImg) {
     newDot.addEventListener('click', () => {
         document.getElementById("slide1").style.backgroundImage = `url(${photos[newDotId-1]})`;
         activephoto = newDotId-1;
-        mixingSound.play(); 
+        mixingSound.play();
     })
 }
 

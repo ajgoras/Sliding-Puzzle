@@ -21,13 +21,14 @@ function setImg2() {
 
 function nextPhoto() {
     let arrowRight = document.querySelector('#arrow-right');
+    let photosCount = photos.length;
     mixingSound.play();
     var whatPhoto = activephoto + 1;
-    if (whatPhoto===2) {
+    if (whatPhoto===photosCount) {
         whatPhoto = 0;
     }
     activephoto = activephoto + 1;
-    if (activephoto==2) {
+    if (activephoto==photosCount) {
         activephoto = 0;
     }
     arrowRight.classList.add('arrowslideR');
@@ -37,14 +38,15 @@ function nextPhoto() {
 
 function prevPhoto() {
     let arrowLeft = document.querySelector('#arrow-left');
+    let photosCount = photos.length;
     mixingSound.play();
     var whatPhoto = activephoto - 1;
     if (whatPhoto===-1) {
-        whatPhoto = 1;
+        whatPhoto = photosCount-1;
     }
     activephoto = activephoto - 1;
     if (activephoto==-1) {
-        activephoto = 1;
+        activephoto = photosCount-1;
     }
     
     arrowLeft.classList.add('arrowslideL');
