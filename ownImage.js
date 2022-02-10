@@ -13,7 +13,7 @@ function addUploadedImageToGame(sourceImg) {
     newDot.addEventListener('click', () => {
         document.getElementById("slide1").style.backgroundImage = `url(${photos[newDotId-1]})`;
         activephoto = newDotId-1;
-        mixingSound.play();
+        mixingSound.play(); 
     })
 }
 
@@ -37,10 +37,10 @@ imageInput.addEventListener('change', function () {
         for (let i = 0; i < blocks.length-1; i++) {
             blocks[i].style.backgroundImage = `url(${uploadedImage})`;
         }
+        addUploadedImageToGame(uploadedImage);
         openSlider();
         alertdiv.style.display = 'none';
         alertdiv.removeChild(alertdiv.lastChild);
-        addUploadedImageToGame(uploadedImage);
     });
     reader.readAsDataURL(this.files[0]);
 })
