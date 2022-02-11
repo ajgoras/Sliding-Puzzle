@@ -3,6 +3,7 @@ let uploadedImage = '';
 let addOwnImageLabel = document.querySelector('#selectBtndiv label');
 let dots = document.querySelector('#dots');
 let photosLs = JSON.parse(localStorage.getItem('ownPhotos'));
+let deleteUploadedPhotosBtn = document.querySelector('#deleteUploadedPhotosBtn');
 
 function loadOwnImages() {
     if (photosLs != null) {
@@ -22,6 +23,22 @@ function loadOwnImages() {
             })
         }
     }
+}
+
+function deleteUploadedPhotos() {
+    for (let i = 3; i < photos.length+1; i++) {
+        removeDotId = 'dot' + i;
+        dotToRemove = document.getElementById(removeDotId);
+        dots.removeChild(dotToRemove)
+    }
+    photos = [
+        p1 = document.getElementById('photo0').src,
+        p2 = document.getElementById('photo1').src
+    ]
+    localStorage.removeItem('ownPhotos');
+    activephoto = 0;
+    document.getElementById("slide1").style.backgroundImage = "url('img/ritka.jpg')";
+    setImg();
 }
 
 function addUploadedImageToGame(sourceImg) {
@@ -47,7 +64,11 @@ addOwnImageLabel.addEventListener('click', () => {
     alertdiv.style.display = 'block';
     setTimeout(() => {
         alertdiv.style.display = 'none';
-        alertdiv.removeChild(alertdiv.lastChild);
+        if (alertdiv.hasChildNodes() == true) {
+            while (alertdiv.firstChild) {
+                alertdiv.removeChild(alertdiv.lastChild);
+            }
+        }
     }, 5500);
 })
 
@@ -62,9 +83,17 @@ imageInput.addEventListener('change', function () {
         addUploadedImageToGame(uploadedImage);
         openSlider();
         alertdiv.style.display = 'none';
-        alertdiv.removeChild(alertdiv.lastChild);
+        if (alertdiv.hasChildNodes() == true) {
+            while (alertdiv.firstChild) {
+                alertdiv.removeChild(alertdiv.lastChild);
+            }
+        }
     });
     reader.readAsDataURL(this.files[0]);
+})
+
+deleteUploadedPhotosBtn.addEventListener('click', () => {
+    deleteUploadedPhotos();
 })
 
 loadOwnImages();

@@ -122,6 +122,10 @@ button{
     position: relative;
 }
 
+button:hover{
+    background-position:100px;
+}
+
 #alertdiv{
     display: none;
     margin-top: 10px;
@@ -144,11 +148,6 @@ button{
 
 }
 
-#selectImgBtn:hover{
-    background-position:100px;
-}
-
-
 .bounce {
     animation-name: bounce;
     animation-duration: 1.4s;
@@ -168,10 +167,6 @@ button{
 #mixBtn{
     height: 50px;
     width: 100px;
-}
-
-#mixBtn:hover{
-    background-position: 100px;
 }
 
 #slider{
@@ -274,10 +269,6 @@ button{
     height: 50px;
     width: 100px;
 }
-#selectBtn:hover{
-    background-position: 100px;
-}
-
 
 #selectBtndiv{
     margin-top: 10px;
@@ -317,6 +308,12 @@ input[type="file"] {
 }
 #imgInputStyle:hover{
     background-position:100px;
+}
+
+#deleteUploadedPhotosBtn{
+    margin-left: 15px;
+    height: 50px;
+    width: 120px;
 }
 
 
