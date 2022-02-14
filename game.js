@@ -9,12 +9,15 @@ let dot2 = document.querySelector('#dot2');
 let selectBtn = document.querySelector('#selectBtn');
 let addOwnImageBtn = document.querySelector('#addOwnImageBtn');
 let alertdiv = document.querySelector('#alertdiv');
+let resetGameBtn = document.querySelector('#resetPuzzleBtn');
 
 const gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
     [gameBlocks[3], gameBlocks[4], gameBlocks[5]],
     [gameBlocks[6], gameBlocks[7], gameBlocks[8]]
 ];
+
+const gameStateCopy = gameState;
 
 function render(gameState) {
     gameState.forEach((rowElement, rowIndex) => {
@@ -226,6 +229,27 @@ function checkWin() {
     }
 }
 
-mixBtn.addEventListener('click', () => mixPuzzles());
+function resetPuzzle() {
+    let x = 2;
+    let y = 2;
+    let emptyX, emptyY;
+    gameState.forEach((rowElement, rowIndex) => {
+        rowElement.forEach((columnElement, columnIndex) => {
+            if (columnElement.id =='emptyBlock') {
+                emptyX = rowIndex;
+                emptyY = columnIndex;
+            }
+        })
+    })
+    let tempp = gameState[x][y];
+    gameState[x][y] = gameState[emptyX][emptyY];
+    gameState[emptyX][emptyY] = tempp;
+    moveElement(gameState[x][y], gameState[emptyX][emptyY]);
+}
 
+mixBtn.addEventListener('click', () => mixPuzzles());
+resetGameBtn.addEventListener('click', () => {
+    resetPuzzle();
+    render(gameState);
+})
 render(gameState);
