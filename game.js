@@ -9,7 +9,7 @@ let dot2 = document.querySelector('#dot2');
 let selectBtn = document.querySelector('#selectBtn');
 let addOwnImageBtn = document.querySelector('#addOwnImageBtn');
 let alertdiv = document.querySelector('#alertdiv');
-let resetGameBtn = document.querySelector('#resetPuzzleBtn');
+let resetPuzzleBtn = document.querySelector('#resetPuzzleBtn');
 
 const gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
@@ -248,8 +248,12 @@ function resetPuzzle() {
 }
 
 mixBtn.addEventListener('click', () => mixPuzzles());
-resetGameBtn.addEventListener('click', () => {
+resetPuzzleBtn.addEventListener('click', () => {
     resetPuzzle();
     render(gameState);
+    resetPuzzleBtn.classList.add('bounce');
+    setTimeout(() => {
+        resetPuzzleBtn.classList.remove('bounce');
+    }, 700);
 })
 render(gameState);
