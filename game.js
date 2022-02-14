@@ -17,8 +17,6 @@ const gameState = [
     [gameBlocks[6], gameBlocks[7], gameBlocks[8]]
 ];
 
-const gameStateCopy = gameState;
-
 function render(gameState) {
     gameState.forEach((rowElement, rowIndex) => {
         rowElement.forEach((columnElement, columnIndex) => {
@@ -141,8 +139,18 @@ function mixPuzzles() {
 
 
 function checkMove(x, y, emptyX, emptyY) {
+    let a = gameState[x][y];
+    let b = gameState[emptyX][emptyY];
+    x = a.style.top;
+    x = x.slice(0, x.length - 2);
+    y = a.style.left;
+    y = y.slice(0, y.length - 2);
+    emptyX = b.style.top;
+    emptyX = emptyX.slice(0, emptyX.length - 2);
+    emptyY = b.style.left;
+    emptyY = emptyY.slice(0, emptyY.length - 2);
     if (x == emptyX || y == emptyY) {
-        if (x-emptyX==1||y-emptyY==1||x-emptyX==-1||y-emptyY==-1) {
+        if (x-emptyX==100||y-emptyY==100||x-emptyX==-100||y-emptyY==-100) {
             return true;
         }
     }
@@ -193,7 +201,7 @@ gameField.addEventListener('click', (event) => {
         moveElement(gameState[x][y], gameState[emptyX][emptyY]);
         checkWin();
     }
-
+    saveGameToLs();
 })
 let winSound = new Audio('sound/win.mp3');
 function checkWin() {
@@ -245,7 +253,38 @@ function resetPuzzle() {
     gameState[x][y] = gameState[emptyX][emptyY];
     gameState[emptyX][emptyY] = tempp;
     moveElement(gameState[x][y], gameState[emptyX][emptyY]);
+    localStorage.removeItem('gameStateTop');
+    localStorage.removeItem('gameStateLeft');
 }
+
+function saveGameToLs() {
+    let currentGameStateBlocks = document.querySelectorAll('.block');
+    let tops = [];
+    let lefts = [];
+    let index = 0;
+    for (let x = 0; x < 9; x++) {
+        tops[index] = currentGameStateBlocks[index].style.top;
+        lefts[index] = currentGameStateBlocks[index].style.left;
+        index++;
+    }
+    localStorage.setItem('gameStateTop', JSON.stringify(tops));
+    localStorage.setItem('gameStateLeft', JSON.stringify(lefts));
+}
+
+function loadGameStateFromLs() {
+    let tops = JSON.parse(localStorage.getItem('gameStateTop'));
+    let lefts = JSON.parse(localStorage.getItem('gameStateLeft'));
+    let index = 0;
+    for (let x = 0; x < 3; x++) {
+        for (let y = 0; y < 3; y++) {
+            gameState[x][y].style.top = tops[index];
+            gameState[x][y].style.left = lefts[index];
+            index++; 
+        }
+      
+    }
+}
+
 
 mixBtn.addEventListener('click', () => mixPuzzles());
 resetPuzzleBtn.addEventListener('click', () => {
@@ -256,4 +295,6 @@ resetPuzzleBtn.addEventListener('click', () => {
         resetPuzzleBtn.classList.remove('bounce');
     }, 700);
 })
+
 render(gameState);
+loadGameStateFromLs();
