@@ -196,9 +196,6 @@ gameField.addEventListener('click', (event) => {
     console.log(x, y);
 
     if (checkMove(x, y, emptyX, emptyY)==true) {
-        let temp = gameState[x][y];
-        gameState[x][y] = gameState[emptyX][emptyY];
-        gameState[emptyX][emptyY] = temp;
         moveElement(gameState[x][y], gameState[emptyX][emptyY]);
         checkWin();
     }
