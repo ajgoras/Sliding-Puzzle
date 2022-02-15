@@ -1,12 +1,16 @@
-var activephoto = 0;
-var isSliderActive = 0;
-var click = new Audio('sound/click.mp3');
-
+let activephoto = 0;
+let isSliderActive = 0;
+let click = new Audio('sound/click.mp3');
+let activePhotoLs = localStorage.getItem('activePhoto');
 
 let photos = [
     p1 = document.getElementById('photo0').src,
     p2 = document.getElementById('photo1').src
 ]
+
+function saveActivePhotoToLs(photoId) {
+    localStorage.setItem('activePhoto', photoId);
+}
 
 function setImg1() {
     document.getElementById("slide1").style.backgroundImage = "url('img/ritka.jpg')";
@@ -61,6 +65,7 @@ function setImg() {
         blocks[i].style.backgroundImage = `url(${photos[activephoto]})`;
     }
     openSlider();
+    saveActivePhotoToLs(activephoto);
 }
 
 function openSlider() {
@@ -80,6 +85,17 @@ function openSlider() {
     selectImgBtn.classList.add('bounce');
     setTimeout(() => { selectImgBtn.classList.remove('bounce');}, 700);
 
+}
+
+function loadActivePhotoFromLs() {
+    if (activePhotoLs!=null) {
+        activephoto = parseInt(activePhotoLs);
+        blocks = document.getElementsByClassName('block');
+        for (let i = 0; i < blocks.length-1; i++) {
+            blocks[i].style.backgroundImage = `url(${photos[activephoto]})`;
+        }
+        document.getElementById("slide1").style.backgroundImage = `url(${photos[activephoto]})`;
+    }
 }
 
 selectImgBtn.addEventListener('click', () => openSlider());

@@ -39,6 +39,7 @@ function deleteUploadedPhotos() {
     activephoto = 0;
     document.getElementById("slide1").style.backgroundImage = "url('img/ritka.jpg')";
     setImg();
+    localStorage.removeItem('activePhoto');
 }
 
 function addUploadedImageToGame(sourceImg) {
@@ -50,10 +51,11 @@ function addUploadedImageToGame(sourceImg) {
     dots.appendChild(newDot);
     newDot.addEventListener('click', () => {
         document.getElementById("slide1").style.backgroundImage = `url(${photos[newDotId-1]})`;
-        activephoto = newDotId-1;
+        activephoto = newDotId - 1;
         mixingSound.play();
     })
     localStorage.setItem('ownPhotos', JSON.stringify(photos));
+    saveActivePhotoToLs(newDotId-1);
 }
 
 addOwnImageLabel.addEventListener('click', () => {
@@ -81,6 +83,7 @@ imageInput.addEventListener('change', function () {
             blocks[i].style.backgroundImage = `url(${uploadedImage})`;
         }
         addUploadedImageToGame(uploadedImage);
+        document.getElementById("slide1").style.backgroundImage = `url(${uploadedImage})`;
         openSlider();
         alertdiv.style.display = 'none';
         if (alertdiv.hasChildNodes() == true) {
@@ -97,3 +100,4 @@ deleteUploadedPhotosBtn.addEventListener('click', () => {
 })
 
 loadOwnImages();
+loadActivePhotoFromLs();
