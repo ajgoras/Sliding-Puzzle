@@ -10,6 +10,7 @@ let selectBtn = document.querySelector('#selectBtn');
 let addOwnImageBtn = document.querySelector('#addOwnImageBtn');
 let alertdiv = document.querySelector('#alertdiv');
 let resetPuzzleBtn = document.querySelector('#resetPuzzleBtn');
+let difficultyBtn = document.querySelector('#difficultyBtn');
 let difficulty = 'easy';
 
 const gameState = [
@@ -292,6 +293,20 @@ resetPuzzleBtn.addEventListener('click', () => {
     resetPuzzleBtn.classList.add('bounce');
     setTimeout(() => {
         resetPuzzleBtn.classList.remove('bounce');
+    }, 700);
+})
+
+difficultyBtn.addEventListener('click', () => {
+    let difficultydiv = document.getElementById('difficultydiv');
+    if (difficultydiv.style.display=='flex') {
+        difficultydiv.style.display = 'none';
+    }
+    else {
+        difficultydiv.style.display = 'flex';
+    }
+    difficultyBtn.classList.add('bounce');
+    setTimeout(() => {
+        difficultyBtn.classList.remove('bounce');
     }, 700);
 })
 

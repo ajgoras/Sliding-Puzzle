@@ -142,7 +142,7 @@ button:hover{
 }
 
 #selectImgBtn{
-    margin-right: 50px;
+    margin-right: 30px;
     height: 50px;
     width: 100px;
 
@@ -164,15 +164,33 @@ button:hover{
     100% { transform: scale(1,1)    translateY(0); }
 }
 
+#difficultyBtn{
+    height: 50px;
+    width: 100px;
+}
+
 #mixBtn{
+    margin-left: 30px;
     height: 50px;
     width: 100px;
 }
 
 #resetPuzzleBtn{
-    margin-left: 50px;
+    margin-left: 30px;
     height: 50px;
     width: 100px;
+}
+
+#difficultydiv{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+#difficultydiv button{
+    height: 35px;
+    width: 80px;
+    margin-left: 15px;
 }
 
 #slider{
