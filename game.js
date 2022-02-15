@@ -10,6 +10,7 @@ let selectBtn = document.querySelector('#selectBtn');
 let addOwnImageBtn = document.querySelector('#addOwnImageBtn');
 let alertdiv = document.querySelector('#alertdiv');
 let resetPuzzleBtn = document.querySelector('#resetPuzzleBtn');
+let difficulty = 'easy';
 
 const gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
@@ -205,36 +206,36 @@ gameField.addEventListener('click', (event) => {
 })
 let winSound = new Audio('sound/win.mp3');
 function checkWin() {
-    let r1 = gameState[0];
-    let r2 = gameState[1];
-    let r3 = gameState[2];
-
-    if (r1[0].style['background-position-y'] == '0px' &&
-    r1[0].style['background-position-x'] == '0px'&&
-    r1[1].style['background-position-y'] == '0px'&&
-    r1[1].style['background-position-x'] == '-100px'&&
-    r1[2].style['background-position-y'] == '0px'&&
-    r1[2].style['background-position-x'] == '-200px'&&
-
-    r2[0].style['background-position-y'] == '-100px'&&
-    r2[0].style['background-position-x'] == '0px'&&
-    r2[1].style['background-position-y'] == '-100px'&&
-    r2[1].style['background-position-x'] == '-100px'&&
-    r2[2].style['background-position-y'] == '-100px'&&
-    r2[2].style['background-position-x'] == '-200px'&&
-
-    r3[0].style['background-position-y'] == '-200px'&&
-    r3[0].style['background-position-x'] == '0px'&&
-    r3[1].style['background-position-y'] == '-200px'&&
-    r3[1].style['background-position-x'] == '-100px'&&
-    r3[2].style['background-position-y'] == '-200px'&&
-    r3[2].style['background-position-x'] == '-200px') {
-        let winInfo = document.querySelector('#winInfo');
-        winSound.play();
-        winInfo.classList.add('bounce-win');
-        winInfo.classList.remove('invisible');
-        setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
+    let currentGameStateBlocks = document.querySelectorAll('.block');
+    if (difficulty == 'easy') {
+        if (currentGameStateBlocks[0].style.top == '0px' &&
+        currentGameStateBlocks[0].style.left == '0px'&&
+        currentGameStateBlocks[1].style.top == '0px'&&
+        currentGameStateBlocks[1].style.left == '100px'&&
+        currentGameStateBlocks[2].style.top == '0px'&&
+        currentGameStateBlocks[2].style.left == '200px'&&
+    
+        currentGameStateBlocks[3].style.top == '100px'&&
+        currentGameStateBlocks[3].style.left == '0px'&&
+        currentGameStateBlocks[4].style.top == '100px'&&
+        currentGameStateBlocks[4].style.left == '100px'&&
+        currentGameStateBlocks[5].style.top == '100px'&&
+        currentGameStateBlocks[5].style.left == '200px'&&
+    
+        currentGameStateBlocks[6].style.top == '200px'&&
+        currentGameStateBlocks[6].style.left == '0px'&&
+        currentGameStateBlocks[7].style.top == '200px'&&
+        currentGameStateBlocks[7].style.left == '100px'&&
+        currentGameStateBlocks[8].style.top == '200px'&&
+        currentGameStateBlocks[8].style.left == '200px') {
+            let winInfo = document.querySelector('#winInfo');
+            winSound.play();
+            winInfo.classList.add('bounce-win');
+            winInfo.classList.remove('invisible');
+            setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
+        }
     }
+
 }
 
 function resetPuzzle() {
