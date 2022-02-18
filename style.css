@@ -360,7 +360,7 @@ input[type="file"] {
     background-size: 300px 300px;
     background-repeat: no-repeat;
 }
-.block:last-of-type{
+#emptyBlock{
     background: none;
     border: none;
 }
