@@ -19,13 +19,16 @@ let gameState = [
     [gameBlocks[6], gameBlocks[7], gameBlocks[8]]
 ];
 
-function render(gameState) {
+function render(gameState, px) {
+    if (px==null) {
+        px = 100;
+    }
     gameState.forEach((rowElement, rowIndex) => {
         rowElement.forEach((columnElement, columnIndex) => {
-            columnElement.style.top = `${rowIndex * 100}px`;
-            columnElement.style.left = `${columnIndex * 100}px`;
-            columnElement.style['background-position-y'] = `-${rowIndex * 100}px`
-            columnElement.style['background-position-x'] = `-${columnIndex * 100}px`
+            columnElement.style.top = `${rowIndex * px}px`;
+            columnElement.style.left = `${columnIndex * px}px`;
+            columnElement.style['background-position-y'] = `-${rowIndex * px}px`
+            columnElement.style['background-position-x'] = `-${columnIndex * px}px`
         })
     })
 }
