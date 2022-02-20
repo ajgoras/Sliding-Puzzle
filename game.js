@@ -34,6 +34,16 @@ function render(gameState, px) {
 }
 
 function checkMove(x, y, emptyX, emptyY) {
+    let value = 0;
+    if (difficulty=='easy') {
+        value = 100;
+    }
+    if (difficulty=='medium') {
+        value = 80;
+    }
+    if (difficulty=='hard') {
+        value = 70;
+    }
     let a = gameState[x][y];
     let b = gameState[emptyX][emptyY];
     x = a.style.top;
@@ -45,7 +55,7 @@ function checkMove(x, y, emptyX, emptyY) {
     emptyY = b.style.left;
     emptyY = emptyY.slice(0, emptyY.length - 2);
     if (x == emptyX || y == emptyY) {
-        if (x-emptyX==100||y-emptyY==100||x-emptyX==-100||y-emptyY==-100) {
+        if (x-emptyX==value||y-emptyY==value||x-emptyX==-value||y-emptyY==-value) {
             return true;
         }
     }

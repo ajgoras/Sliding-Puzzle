@@ -31,6 +31,7 @@ function changeDifficulty(diff) {
         // gameBlocks[gameBlocks.length - 1].style.background = 'none';
         // gameBlocks[gameBlocks.length - 1].style.border = 'none';
         render(gameState);
+        difficulty = 'easy';
     }
 
     if (diff == 'medium') {
@@ -62,6 +63,7 @@ function changeDifficulty(diff) {
         // gameBlocks[gameBlocks.length - 1].style.background = 'none';
         // gameBlocks[gameBlocks.length - 1].style.border = 'none';
         render(gameState, 80);
+        difficulty = 'medium';
     }
 }
 
