@@ -32,6 +32,7 @@ function changeDifficulty(diff) {
         // gameBlocks[gameBlocks.length - 1].style.border = 'none';
         render(gameState);
         difficulty = 'easy';
+        localStorage.setItem('difficulty', difficulty);
     }
 
     if (diff == 'medium') {
@@ -64,6 +65,7 @@ function changeDifficulty(diff) {
         // gameBlocks[gameBlocks.length - 1].style.border = 'none';
         render(gameState, 80);
         difficulty = 'medium';
+        localStorage.setItem('difficulty', difficulty);
     }
 }
 
