@@ -1,4 +1,7 @@
 function loadGameStateFromLs() {
+    if (localStorage.getItem('difficulty')!=null) {
+        changeDifficulty(localStorage.getItem('difficulty'));
+    }
     if (localStorage.getItem('gameStateTop')!=null) {
         let tops = JSON.parse(localStorage.getItem('gameStateTop'));
         let lefts = JSON.parse(localStorage.getItem('gameStateLeft'));
@@ -10,9 +13,6 @@ function loadGameStateFromLs() {
                 index++; 
             }
         }
-    }
-    if (localStorage.getItem('difficulty')!=null) {
-        changeDifficulty(localStorage.getItem('difficulty'));
     }
 }
 

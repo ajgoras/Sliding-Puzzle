@@ -11,7 +11,7 @@ let addOwnImageBtn = document.querySelector('#addOwnImageBtn');
 let alertdiv = document.querySelector('#alertdiv');
 let resetPuzzleBtn = document.querySelector('#resetPuzzleBtn');
 let difficultyBtn = document.querySelector('#difficultyBtn');
-let difficulty = 'easy';
+let difficulty;
 
 let gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
@@ -142,6 +142,14 @@ function checkWin() {
 function resetPuzzle() {
     let x = 2;
     let y = 2;
+    if (difficulty=='medium') {
+        x = 3;
+        y = 3;
+    }
+    if (difficulty=='hard') {
+        x = 4;
+        y = 4;
+    }
     let emptyX, emptyY;
     gameState.forEach((rowElement, rowIndex) => {
         rowElement.forEach((columnElement, columnIndex) => {
@@ -175,9 +183,17 @@ function saveGameToLs() {
 
 
 mixBtn.addEventListener('click', () => mixPuzzles());
+
 resetPuzzleBtn.addEventListener('click', () => {
+    let px = 100;
+    if (difficulty=='medium') {
+        px = 80;
+    }
+    if (difficulty=='hard') {
+        px = 70;
+    }
     resetPuzzle();
-    render(gameState);
+    render(gameState, px);
     resetPuzzleBtn.classList.add('bounce');
     setTimeout(() => {
         resetPuzzleBtn.classList.remove('bounce');
