@@ -182,6 +182,12 @@ button:hover{
 }
 
 #difficultydiv{
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
     display: none;
     align-items: center;
     justify-content: center;
@@ -347,7 +353,17 @@ input[type="file"] {
     /* display: flex;
     flex-wrap: wrap; */
     position: relative;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3 ease-in-out;
 }
+#game.fade{
+    opacity:0;
+}
+
 .block{
     position: absolute;
     border: dashed rgba(255, 255, 255, 0.575) 1px;
