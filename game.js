@@ -172,7 +172,14 @@ function saveGameToLs() {
     let tops = [];
     let lefts = [];
     let index = 0;
-    for (let x = 0; x < 9; x++) {
+    let count = 9;
+    if (difficulty=='medium') {
+        count = 16;
+    }
+    if (difficulty=='hard') {
+        count = 25;
+    }
+    for (let x = 0; x < count; x++) {
         tops[index] = currentGameStateBlocks[index].style.top;
         lefts[index] = currentGameStateBlocks[index].style.left;
         index++;
