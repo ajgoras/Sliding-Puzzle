@@ -106,38 +106,6 @@ gameField.addEventListener('click', (event) => {
     saveGameToLs();
 })
 let winSound = new Audio('sound/win.mp3');
-function checkWin() {
-    let currentGameStateBlocks = document.querySelectorAll('.block');
-    if (difficulty == 'easy') {
-        if (currentGameStateBlocks[0].style.top == '0px' &&
-        currentGameStateBlocks[0].style.left == '0px'&&
-        currentGameStateBlocks[1].style.top == '0px'&&
-        currentGameStateBlocks[1].style.left == '100px'&&
-        currentGameStateBlocks[2].style.top == '0px'&&
-        currentGameStateBlocks[2].style.left == '200px'&&
-    
-        currentGameStateBlocks[3].style.top == '100px'&&
-        currentGameStateBlocks[3].style.left == '0px'&&
-        currentGameStateBlocks[4].style.top == '100px'&&
-        currentGameStateBlocks[4].style.left == '100px'&&
-        currentGameStateBlocks[5].style.top == '100px'&&
-        currentGameStateBlocks[5].style.left == '200px'&&
-    
-        currentGameStateBlocks[6].style.top == '200px'&&
-        currentGameStateBlocks[6].style.left == '0px'&&
-        currentGameStateBlocks[7].style.top == '200px'&&
-        currentGameStateBlocks[7].style.left == '100px'&&
-        currentGameStateBlocks[8].style.top == '200px'&&
-        currentGameStateBlocks[8].style.left == '200px') {
-            let winInfo = document.querySelector('#winInfo');
-            winSound.play();
-            winInfo.classList.add('bounce-win');
-            winInfo.classList.remove('invisible');
-            setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
-        }
-    }
-
-}
 
 function resetPuzzle() {
     let x = 2;
