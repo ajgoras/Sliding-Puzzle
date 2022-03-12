@@ -13,6 +13,11 @@ let resetPuzzleBtn = document.querySelector('#resetPuzzleBtn');
 let difficultyBtn = document.querySelector('#difficultyBtn');
 let difficulty;
 
+if (localStorage.getItem('difficulty') == null) {
+    difficulty = 'easy';
+    localStorage.setItem('difficulty', difficulty);
+}
+
 let gameState = [
     [gameBlocks[0], gameBlocks[1], gameBlocks[2]],
     [gameBlocks[3], gameBlocks[4], gameBlocks[5]],
