@@ -88,6 +88,7 @@ function openSlider() {
 }
 
 function loadActivePhotoFromLs() {
+    activePhotoLs=localStorage.getItem('activePhoto');
     if (activePhotoLs!=null) {
         activephoto = parseInt(activePhotoLs);
         blocks = document.getElementsByClassName('block');
