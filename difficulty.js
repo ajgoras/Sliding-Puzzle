@@ -117,6 +117,7 @@ function changeDifficulty(diff) {
 
 easyBtn.addEventListener('click', () => {
     changeDifficulty('easy');
+    resetPuzzle();
     document.getElementById('difficultydiv').style.opacity = 0;
     setTimeout(() => {
         document.getElementById('difficultydiv').style.display = 'none';
@@ -126,6 +127,7 @@ easyBtn.addEventListener('click', () => {
 
 mediumBtn.addEventListener('click', () => {
     changeDifficulty('medium');
+    resetPuzzle();
     document.getElementById('difficultydiv').style.opacity = 0;
     setTimeout(() => {
         document.getElementById('difficultydiv').style.display = 'none';
@@ -135,6 +137,7 @@ mediumBtn.addEventListener('click', () => {
 
 hardBtn.addEventListener('click', () => {
     changeDifficulty('hard');
+    resetPuzzle();
     document.getElementById('difficultydiv').style.opacity = 0;
     setTimeout(() => {
         document.getElementById('difficultydiv').style.display = 'none';
