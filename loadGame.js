@@ -1,7 +1,9 @@
-function loadGameStateFromLs() {
-    if (localStorage.getItem('difficulty')!=null) {
+function loadDiffFromLs() {
+    if (localStorage.getItem('difficulty') != null) {
         changeDifficulty(localStorage.getItem('difficulty'));
     }
+}
+function loadGameStateFromLs() {
     if (localStorage.getItem('gameStateTop')!=null) {
         let tops = JSON.parse(localStorage.getItem('gameStateTop'));
         let lefts = JSON.parse(localStorage.getItem('gameStateLeft'));
@@ -21,6 +23,12 @@ function loadGameStateFromLs() {
             }
         }
     }
+    loadActivePhotoFromLs();
 }
 
-loadGameStateFromLs();
+loadDiffFromLs();
+setTimeout(() => {
+    loadGameStateFromLs();
+}, 320);
+//loadGameStateFromLs();
+//TODO: Nie dziala wgl wczytywanie przez 3 linijke w tym pliku, zawsze wczytuje domyslna ukladanke, bez tego dziala jak powinno ale tylko na easy
