@@ -123,6 +123,9 @@ easyBtn.addEventListener('click', () => {
         document.getElementById('difficultydiv').style.display = 'none';
         document.getElementById('difficultydiv').style.opacity = 1;
     }, 270);
+    setTimeout(() => {
+        loadActivePhotoFromLs();
+    }, 300);
 })
 
 mediumBtn.addEventListener('click', () => {
@@ -133,6 +136,9 @@ mediumBtn.addEventListener('click', () => {
         document.getElementById('difficultydiv').style.display = 'none';
         document.getElementById('difficultydiv').style.opacity = 1;
     }, 270);
+    setTimeout(() => {
+        loadActivePhotoFromLs();
+    }, 300);
 })
 
 hardBtn.addEventListener('click', () => {
@@ -143,4 +149,7 @@ hardBtn.addEventListener('click', () => {
         document.getElementById('difficultydiv').style.display = 'none';
         document.getElementById('difficultydiv').style.opacity = 1;
     }, 270);
+    setTimeout(() => {
+        loadActivePhotoFromLs();
+    }, 300);
 })
