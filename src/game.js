@@ -12,6 +12,8 @@ let alertdiv = document.querySelector('#alertdiv');
 let resetPuzzleBtn = document.querySelector('#resetPuzzleBtn');
 let difficultyBtn = document.querySelector('#difficultyBtn');
 let difficulty;
+let winSound = new Audio('sound/win.mp3');
+
 
 if (localStorage.getItem('difficulty') == null) {
     difficulty = 'easy';
@@ -110,7 +112,6 @@ gameField.addEventListener('click', (event) => {
     }
     saveGameToLs();
 })
-let winSound = new Audio('sound/win.mp3');
 
 function resetPuzzle() {
     let x = 2;
@@ -194,4 +195,4 @@ difficultyBtn.addEventListener('click', () => {
     }, 700);
 })
 
-render(gameState);
+//render(gameState);

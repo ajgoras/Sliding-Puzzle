@@ -3,6 +3,7 @@ let mediumBtn = document.querySelector('#mediumBtn');
 let hardBtn = document.querySelector('#hardBtn');
 
 function changeDifficulty(diff) {
+    gameField.classList.remove('fade');
     if (diff == 'easy') {
         gameField.classList.toggle('fade');
         setTimeout(() => {
