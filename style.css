@@ -207,7 +207,7 @@ button:hover{
     position: relative;
 }
 
-#slide1{
+#slide{
     background-image: url(img/ritka.jpg);
     background-size: 150px;
     height: 150px;
@@ -366,7 +366,7 @@ input[type="file"] {
 
 .block{
     position: absolute;
-    border: dashed rgba(255, 255, 255, 0.575) 1px;
+    border: dashed rgba(255, 255, 255, 0.450) 1px;
     height: 100px;
     width: 100px;
     color: transparent;
@@ -394,6 +394,7 @@ input[type="file"] {
 }
 
 #winInfo{
+    pointer-events: none;
     text-align: center;
     color: rgb(216, 184, 5);
     font-size: 50px;

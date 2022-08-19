@@ -13,12 +13,12 @@ function saveActivePhotoToLs(photoId) {
 }
 
 function setImg1() {
-    document.getElementById("slide1").style.backgroundImage = "url('img/ritka.jpg')";
+    document.getElementById("slide").style.backgroundImage = "url('img/ritka.jpg')";
     activephoto = 0;
     mixingSound.play();
 }
 function setImg2() {
-    document.getElementById("slide1").style.backgroundImage = "url('img/maniek.jpg')";
+    document.getElementById("slide").style.backgroundImage = "url('img/maniek.jpg')";
     activephoto = 1;
     mixingSound.play();
 }
@@ -37,7 +37,7 @@ function nextPhoto() {
     }
     arrowRight.classList.add('arrowslideR');
     setTimeout(() => {  arrowRight.classList.remove('arrowslideR'); }, 700);
-    setTimeout(() => { document.getElementById("slide1").style.backgroundImage = `url(${photos[whatPhoto]})`;}, 100); 
+    setTimeout(() => { document.getElementById("slide").style.backgroundImage = `url(${photos[whatPhoto]})`;}, 100); 
 }
 
 function prevPhoto() {
@@ -55,7 +55,7 @@ function prevPhoto() {
     
     arrowLeft.classList.add('arrowslideL');
     setTimeout(() => {  arrowLeft.classList.remove('arrowslideL'); }, 700);
-    setTimeout(() => { document.getElementById("slide1").style.backgroundImage = `url(${photos[whatPhoto]})`; }, 100); 
+    setTimeout(() => { document.getElementById("slide").style.backgroundImage = `url(${photos[whatPhoto]})`; }, 100); 
 }
 
 function setImg() {
@@ -95,7 +95,7 @@ function loadActivePhotoFromLs() {
         for (let i = 0; i < blocks.length-1; i++) {
             blocks[i].style.backgroundImage = `url(${photos[activephoto]})`;
         }
-        document.getElementById("slide1").style.backgroundImage = `url(${photos[activephoto]})`;
+        document.getElementById("slide").style.backgroundImage = `url(${photos[activephoto]})`;
     }
 }
 
