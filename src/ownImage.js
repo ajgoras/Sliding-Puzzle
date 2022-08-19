@@ -77,20 +77,26 @@ addOwnImageLabel.addEventListener('click', () => {
 imageInput.addEventListener('change', function () {
     const reader = new FileReader();
     reader.addEventListener('load', () => {
-        uploadedImage = reader.result;
-        blocks = document.getElementsByClassName('block');
-        for (let i = 0; i < blocks.length-1; i++) {
-            blocks[i].style.backgroundImage = `url(${uploadedImage})`;
-        }
-        addUploadedImageToGame(uploadedImage);
-        document.getElementById("slide").style.backgroundImage = `url(${uploadedImage})`;
-        openSlider();
-        alertdiv.style.display = 'none';
-        if (alertdiv.hasChildNodes() == true) {
-            while (alertdiv.firstChild) {
-                alertdiv.removeChild(alertdiv.lastChild);
+        gameField.classList.toggle('fade');
+        setTimeout(() => {
+            uploadedImage = reader.result;
+            blocks = document.getElementsByClassName('block');
+            for (let i = 0; i < blocks.length-1; i++) {
+                blocks[i].style.backgroundImage = `url(${uploadedImage})`;
             }
-        }
+            addUploadedImageToGame(uploadedImage);
+            document.getElementById("slide").style.backgroundImage = `url(${uploadedImage})`;
+            openSlider();
+            alertdiv.style.display = 'none';
+            if (alertdiv.hasChildNodes() == true) {
+                while (alertdiv.firstChild) {
+                    alertdiv.removeChild(alertdiv.lastChild);
+                }
+            }    
+            setTimeout(() => {
+                gameField.classList.toggle('fade');
+            }, 20);
+        }, 200);
     });
     reader.readAsDataURL(this.files[0]);
 })

@@ -59,13 +59,19 @@ function prevPhoto() {
 }
 
 function setImg() {
-    blocks = document.getElementsByClassName('block');
-    for (let i = 0; i < blocks.length-1; i++) {
-        //blocks[i].style.cssText = "background-image: url(maniek.jpg)";
-        blocks[i].style.backgroundImage = `url(${photos[activephoto]})`;
-    }
-    openSlider();
-    saveActivePhotoToLs(activephoto);
+    gameField.classList.toggle('fade');
+    setTimeout(() => {
+        blocks = document.getElementsByClassName('block');
+        for (let i = 0; i < blocks.length-1; i++) {
+            //blocks[i].style.cssText = "background-image: url(maniek.jpg)";
+            blocks[i].style.backgroundImage = `url(${photos[activephoto]})`;
+        }
+        openSlider();
+        saveActivePhotoToLs(activephoto);
+        setTimeout(() => {
+            gameField.classList.toggle('fade');
+        }, 20);
+    }, 220);
 }
 
 function openSlider() {
