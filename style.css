@@ -419,7 +419,7 @@ input[type="file"] {
     50%  { transform: scale(1,1)    translateY(0); }
     100% { transform: scale(1,1)    translateY(0); }
 }
-
+/* 
 .reveal{
     position: relative;
     transform: translateY(170px);
@@ -441,4 +441,4 @@ input[type="file"] {
 .revealtime.delayed, .revealtime2.delayed{
     transform: translateY(0px);
     opacity: 1;
-} 
+} */
