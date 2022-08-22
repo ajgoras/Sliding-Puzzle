@@ -126,6 +126,14 @@ button:hover{
     background-position:100px;
 }
 
+#menudiv button{
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 55px;
+    width: 110px;
+}
+
 #alertdiv{
     display: none;
     margin-top: 10px;
@@ -139,13 +147,6 @@ button:hover{
 #alertdiv strong{
     margin-left: 25px;
     margin-right: 5px;
-}
-
-#selectImgBtn{
-    margin-right: 30px;
-    height: 50px;
-    width: 100px;
-
 }
 
 .bounce {
@@ -164,22 +165,6 @@ button:hover{
     100% { transform: scale(1,1)    translateY(0); }
 }
 
-#difficultyBtn{
-    height: 50px;
-    width: 100px;
-}
-
-#mixBtn{
-    margin-left: 30px;
-    height: 50px;
-    width: 100px;
-}
-
-#resetPuzzleBtn{
-    margin-left: 30px;
-    height: 50px;
-    width: 100px;
-}
 
 #difficultydiv{
     opacity: 1;
@@ -295,17 +280,19 @@ button:hover{
 
 
 
-#selectBtn{
-    height: 50px;
-    width: 100px;
-}
-
 #selectBtndiv{
     margin-top: 10px;
     display: none;
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+#selectBtndiv button{
+    font-size: 14px;
+    margin-left: 20px;
+    height: 50px;
+    width: 100px;
 }
 
 input[type="file"] {
@@ -340,11 +327,6 @@ input[type="file"] {
     background-position:100px;
 }
 
-#deleteUploadedPhotosBtn{
-    margin-left: 15px;
-    height: 50px;
-    width: 120px;
-}
 
 
 #game{
@@ -442,3 +424,31 @@ input[type="file"] {
     transform: translateY(0px);
     opacity: 1;
 } */
+
+
+@media only screen and (max-width: 590px) {
+    #menudiv button{
+        font-size: 2.8vw;
+        margin-left: 2px;
+        margin-right: 2px;
+        height: 10.5vw;
+        width: 21vw;
+    }
+    #selectBtndiv button{
+        font-size: 2.5vw;
+        margin-left: 10px;
+        height: 9vw;
+        width: 18vw;
+    }
+    #imgInputStyle {
+        font-size: 2.2vw;
+        height: 10vw;
+        width: 22vw;
+        margin-left: 10px;
+    }
+    #difficultydiv button{
+        height: 8vw;
+        width: 19vw;
+        margin-left: 12px;
+    }
+  }
