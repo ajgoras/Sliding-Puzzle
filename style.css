@@ -353,7 +353,7 @@ input[type="file"] {
     width: 100px;
     color: transparent;
     font-size: 25px;
-    transition: top 0.25s linear, left 0.25s linear,background-position 0.3s linear;
+    transition: top 0.22s linear, left 0.22s linear,background-position 0.22s linear;
     background-image: url(img/ritka.jpg);
     background-size: 300px 300px;
     background-repeat: no-repeat;

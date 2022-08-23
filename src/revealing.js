@@ -32,6 +32,7 @@
 
 // setTimeout(() => { revealtime(); }, 600);
 // setTimeout(() => { revealtime2(); }, 950);
-// setTimeout(() => {
-//     scroll(0,0)
-// }, 20);
+
+setTimeout(() => {
+    scroll(0,0)
+}, 20);
