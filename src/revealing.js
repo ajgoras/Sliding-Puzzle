@@ -16,22 +16,22 @@
 //     }
 // }
 
-// function revealtime() {
-//     var elements = document.getElementsByClassName('revealtime');
-//     for (let i = 0; i < elements.length; i++) {
-//         elements[i].classList.add('delayed');
-//     }
-// }
+function revealtime() {
+    var elements = document.getElementsByClassName('revealtime');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.add('delayed');
+    }
+}
 
-// function revealtime2() {
-//     var elements = document.getElementsByClassName('revealtime2');
-//     for (let i = 0; i < elements.length; i++) {
-//         elements[i].classList.add('delayed');
-//     }
-// }
+function revealtime2() {
+    var elements = document.getElementsByClassName('revealtime2');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.add('delayed');
+    }
+}
 
-// setTimeout(() => { revealtime(); }, 600);
-// setTimeout(() => { revealtime2(); }, 950);
+setTimeout(() => { revealtime(); }, 300);
+setTimeout(() => { revealtime2(); }, 450);
 
 setTimeout(() => {
     scroll(0,0)

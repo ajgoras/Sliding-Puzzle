@@ -31,4 +31,3 @@ setTimeout(() => {
     loadGameStateFromLs();
 }, 320);
 //loadGameStateFromLs();
-//TODO: Nie dziala wgl wczytywanie przez 3 linijke w tym pliku, zawsze wczytuje domyslna ukladanke, bez tego dziala jak powinno ale tylko na easy

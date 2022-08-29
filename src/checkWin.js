@@ -23,6 +23,7 @@ function checkWin() {
         currentGameStateBlocks[8].style.left == '200px') {
             let winInfo = document.querySelector('#winInfo');
             winSound.play();
+            resetMoves();
             winInfo.classList.add('bounce-win');
             winInfo.classList.remove('invisible');
             setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
@@ -66,6 +67,7 @@ function checkWin() {
         currentGameStateBlocks[15].style.left == '240px') {
             let winInfo = document.querySelector('#winInfo');
             winSound.play();
+            resetMoves();
             winInfo.classList.add('bounce-win');
             winInfo.classList.remove('invisible');
             setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
@@ -129,6 +131,7 @@ function checkWin() {
         currentGameStateBlocks[24].style.left == '280px') {
             let winInfo = document.querySelector('#winInfo');
             winSound.play();
+            resetMoves();
             winInfo.classList.add('bounce-win');
             winInfo.classList.remove('invisible');
             setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
