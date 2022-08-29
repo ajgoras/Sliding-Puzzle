@@ -21,12 +21,7 @@ function checkWin() {
         currentGameStateBlocks[7].style.left == '100px'&&
         currentGameStateBlocks[8].style.top == '200px'&&
         currentGameStateBlocks[8].style.left == '200px') {
-            let winInfo = document.querySelector('#winInfo');
-            winSound.play();
-            resetMoves();
-            winInfo.classList.add('bounce-win');
-            winInfo.classList.remove('invisible');
-            setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
+            applyWin();
         }
     }
     if (difficulty == 'medium') {
@@ -65,12 +60,7 @@ function checkWin() {
         currentGameStateBlocks[14].style.left == '160px'&&
         currentGameStateBlocks[15].style.top == '240px'&&
         currentGameStateBlocks[15].style.left == '240px') {
-            let winInfo = document.querySelector('#winInfo');
-            winSound.play();
-            resetMoves();
-            winInfo.classList.add('bounce-win');
-            winInfo.classList.remove('invisible');
-            setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
+            applyWin();
         }
     }
     if (difficulty=='hard') {
@@ -129,12 +119,16 @@ function checkWin() {
         currentGameStateBlocks[23].style.left == '210px'&&
         currentGameStateBlocks[24].style.top == '280px'&&
         currentGameStateBlocks[24].style.left == '280px') {
-            let winInfo = document.querySelector('#winInfo');
-            winSound.play();
-            resetMoves();
-            winInfo.classList.add('bounce-win');
-            winInfo.classList.remove('invisible');
-            setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
+            applyWin();
         }
     }
+}
+
+function applyWin() {
+    let winInfo = document.querySelector('#winInfo');
+    winSound.play();
+    resetMoves();
+    winInfo.classList.add('bounce-win');
+    winInfo.classList.remove('invisible');
+    setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
 }
