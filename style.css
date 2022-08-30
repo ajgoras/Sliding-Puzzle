@@ -370,6 +370,10 @@ input[type="file"] {
     gap: 150px;
 }
 
+#statisticsDiv p{
+    color: rgba(200, 200, 200, 0.6);
+}
+
 #photos{
     display: none;
 }
@@ -421,13 +425,13 @@ input[type="file"] {
     opacity: 1;
 } */
 
-.revealtime, .revealtime2{
+.revealtime, .revealtime2, .revealtime3{
     position: relative;
     transform: translateY(170px);
     opacity: 0;
     transition: all 0.9s cubic-bezier(0.075, 0.52, 0.165, 1);
 }
-.revealtime.delayed, .revealtime2.delayed{
+.revealtime.delayed, .revealtime2.delayed, .revealtime3.delayed{
     transform: translateY(0px);
     opacity: 1;
 }

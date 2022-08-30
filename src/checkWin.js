@@ -122,12 +122,14 @@ function checkWin() {
             applyWin();
         }
     }
+    return false;
 }
 
 function applyWin() {
     let winInfo = document.querySelector('#winInfo');
     winSound.play();
     resetMoves();
+    stopCountdown();
     winInfo.classList.add('bounce-win');
     winInfo.classList.remove('invisible');
     setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);

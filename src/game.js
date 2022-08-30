@@ -109,6 +109,7 @@ gameField.addEventListener('click', (event) => {
     if (checkMove(x, y, emptyX, emptyY)==true) {
         moveElement(gameState[x][y], gameState[emptyX][emptyY]);
         increaseMoves();
+        checkCountdown();
         checkWin();
     }
     saveGameToLs();

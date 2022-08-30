@@ -29,9 +29,16 @@ function revealtime2() {
         elements[i].classList.add('delayed');
     }
 }
+function revealtime3() {
+    var elements = document.getElementsByClassName('revealtime3');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.add('delayed');
+    }
+}
 
 setTimeout(() => { revealtime(); }, 300);
 setTimeout(() => { revealtime2(); }, 450);
+setTimeout(() => { revealtime3(); }, 1250);
 
 setTimeout(() => {
     scroll(0,0)
