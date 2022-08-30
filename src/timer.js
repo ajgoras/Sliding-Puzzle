@@ -2,14 +2,15 @@ let countdownRun = false;
 let countdownTime;
 let timer = document.getElementById('timer');
 
-if (localStorage.getItem('time') != null) {
-    setTimeout(() => {
-        if (!checkWin()) {
-            countdownTime = localStorage.getItem('time');
-            startCountdown();
-            
-        }
-    }, 330);
+function loadTimerFromLs() {
+    if (localStorage.getItem('time') != null) {
+        setTimeout(() => {
+            if (!checkWin()) {
+                countdownTime = localStorage.getItem('time');
+                startCountdown();
+            }
+        }, 330);
+    }  
 }
 function checkCountdown() {
     if (countdownRun == false) {
@@ -44,3 +45,5 @@ function updateDOMCountdown() {
     timer.innerHTML = 'Time: ' + formattedTime;
     localStorage.setItem('time', countdownTime);
 }
+
+loadTimerFromLs();
