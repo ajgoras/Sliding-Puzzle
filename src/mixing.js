@@ -482,6 +482,10 @@ function mixPuzzles() {
         }
     }
     saveGameToLs();
+    stopCountdown();
+    resetCountdown();
+    resetMoves();
+    setMovesToZeroInDOM();
     document.querySelector('#mixBtn').classList.add('bounce');
     setTimeout(() => {  document.querySelector('#mixBtn').classList.remove('bounce') }, 700);
 }

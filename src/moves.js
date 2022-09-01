@@ -21,6 +21,10 @@ function resetMoves() {
     localStorage.setItem('moves', movesCount);
 }
 
+function setMovesToZeroInDOM() {
+    moves.innerHTML = 'Moves: 0';
+}
+
 function loadMovesFromLs() {
     movesCount = localStorage.getItem('moves');
     moves.innerHTML = 'Moves: ' + movesCount;

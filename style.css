@@ -28,7 +28,7 @@ body{
     );
     color: #1b1b1b;
     height: 100vh;
-    background-color: #0c5460;
+    background-color: #160b3d;
 }
 
 .background {
@@ -364,10 +364,16 @@ input[type="file"] {
 }
 
 #statisticsDiv{
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s;
     margin-top: 60px;
     display: flex;
     justify-content: center;
     gap: 150px;
+}
+#statisticsDiv.fade{
+    opacity: 0;
 }
 
 #statisticsDiv p{
@@ -387,6 +393,7 @@ input[type="file"] {
 }
 
 #winInfo{
+    user-select: none;
     pointer-events: none;
     text-align: center;
     color: rgb(216, 184, 5);

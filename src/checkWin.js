@@ -122,7 +122,6 @@ function checkWin() {
             applyWin();
         }
     }
-    return false;
 }
 
 function applyWin() {

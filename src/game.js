@@ -141,6 +141,10 @@ function resetPuzzle() {
     moveElement(gameState[x][y], gameState[emptyX][emptyY]);
     localStorage.removeItem('gameStateTop');
     localStorage.removeItem('gameStateLeft');
+    stopCountdown();
+    resetCountdown();
+    resetMoves();
+    setMovesToZeroInDOM();
 }
 
 function saveGameToLs() {

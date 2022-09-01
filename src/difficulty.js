@@ -1,11 +1,14 @@
 let easyBtn = document.querySelector('#easyBtn');
 let mediumBtn = document.querySelector('#mediumBtn');
 let hardBtn = document.querySelector('#hardBtn');
+let statisticsDiv = document.querySelector('#statisticsDiv');
 
 function changeDifficulty(diff) {
     gameField.classList.remove('fade');
+    statisticsDiv.classList.remove('fade');
     if (diff == 'easy') {
         gameField.classList.toggle('fade');
+        statisticsDiv.classList.toggle('fade');
         setTimeout(() => {
             gameBlocks[gameBlocks.length - 1].removeAttribute('id');
             document.getElementById('game').style.width = '300px';
@@ -36,12 +39,14 @@ function changeDifficulty(diff) {
             localStorage.setItem('difficulty', difficulty);
             setTimeout(() => {
                 gameField.classList.toggle('fade');
+                statisticsDiv.classList.toggle('fade');
             }, 300);
         }, 300);
     }
 
     if (diff == 'medium') {
         gameField.classList.toggle('fade');
+        statisticsDiv.classList.toggle('fade');
         setTimeout(() => {
             gameBlocks[gameBlocks.length-1].removeAttribute('id');
             document.getElementById('game').style.width='320px'
@@ -73,12 +78,14 @@ function changeDifficulty(diff) {
             localStorage.setItem('difficulty', difficulty);
             setTimeout(() => {
                 gameField.classList.toggle('fade');
+                statisticsDiv.classList.toggle('fade');
             }, 300);
         }, 300);
     }
     
     if (diff == 'hard') {
         gameField.classList.toggle('fade');
+        statisticsDiv.classList.toggle('fade');
         setTimeout(() => {
             gameBlocks[gameBlocks.length-1].removeAttribute('id');
             document.getElementById('game').style.width='350px'
@@ -111,6 +118,7 @@ function changeDifficulty(diff) {
             localStorage.setItem('difficulty', difficulty);
             setTimeout(() => {
                 gameField.classList.toggle('fade');
+                statisticsDiv.classList.toggle('fade');
             }, 300);
         }, 300);
     }
@@ -126,6 +134,10 @@ easyBtn.addEventListener('click', () => {
     }, 270);
     setTimeout(() => {
         loadActivePhotoFromLs();
+        stopCountdown();
+        resetCountdown();
+        resetMoves();
+        setMovesToZeroInDOM();
     }, 300);
 })
 
@@ -139,6 +151,10 @@ mediumBtn.addEventListener('click', () => {
     }, 270);
     setTimeout(() => {
         loadActivePhotoFromLs();
+        stopCountdown();
+        resetCountdown();
+        resetMoves();
+        setMovesToZeroInDOM();
     }, 300);
 })
 
@@ -152,5 +168,9 @@ hardBtn.addEventListener('click', () => {
     }, 270);
     setTimeout(() => {
         loadActivePhotoFromLs();
+        stopCountdown();
+        resetCountdown();
+        resetMoves();
+        setMovesToZeroInDOM();
     }, 300);
 })

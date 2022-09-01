@@ -1,14 +1,12 @@
 let countdownRun = false;
 let countdownTime;
+let updateTimeInterval = null;
 let timer = document.getElementById('timer');
-
 function loadTimerFromLs() {
-    if (localStorage.getItem('time') != null) {
+    if (localStorage.getItem('time') != null && localStorage.getItem('moves') != 0) {
         setTimeout(() => {
-            if (!checkWin()) {
-                countdownTime = localStorage.getItem('time');
-                startCountdown();
-            }
+            countdownTime = localStorage.getItem('time');
+            startCountdown();
         }, 330);
     }  
 }
@@ -21,6 +19,7 @@ function checkCountdown() {
 }
 
 function startCountdown() {
+    if (updateTimeInterval !== null) return;
     countdownRun = true;
     updateTimeInterval = setInterval(() => {
         updateDOMCountdown();
@@ -29,12 +28,19 @@ function startCountdown() {
 
 function stopCountdown() {
     countdownRun = false;
-    clearInterval(updateTimeInterval);
+    clearInterval(updateTimeInterval); 
+    updateTimeInterval = null;
+}
+
+function resetCountdown() {
+    countdownTime = 0;
+    localStorage.setItem('time', countdownTime);
+    timer.innerHTML = 'Time: 0:00';
 }
 
 function formatTime(time) {
-    var minutes = Math.floor(time / 60);
-    var seconds = (time % 60).toFixed(0);
+    let minutes = Math.floor(time / 60);
+    let seconds = (time % 60).toFixed(0);
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
