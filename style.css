@@ -100,7 +100,7 @@ body{
 
 #menudiv{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
     position: relative;
 }
 
@@ -125,6 +125,64 @@ button{
 button:hover{
     background-position:100px;
 }
+
+
+#langButtondiv{
+    margin-top: 5px;
+    margin-right: 10px;
+    text-align: right;
+    align-items: flex-end;
+    justify-content: right;
+}
+
+#langButtondiv.PL .icon{
+    transform: translateX(21px);
+}
+
+#langButton{
+    border-radius: 50px;
+    height: 25px;
+    outline-width: 5px;
+    position: relative;
+    width: 45px;
+    margin-top: 15px;
+}
+
+#plendiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+#langButton p{
+    margin-right: 4px;
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.icon {
+    background-color: rgba(131,58,180,1);
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 18px;
+    margin: -16.2px 3px;
+    position: absolute;
+    width: 18px;
+    transition: background-color 0.3s;
+    transition: transform 0.3s;
+}
+#langSpan{
+    bottom: 65%;
+    color: var(--color-main);
+    font-size: 11.5px;
+    left: 50%;
+    padding: 12px 0;
+    position: absolute;
+    transform: translateX(-55%);
+    transition: color 0.3s;
+    width: 100%;
+}
+
 
 #menudiv button{
     font-size: 15px;

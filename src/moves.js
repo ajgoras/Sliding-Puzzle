@@ -13,7 +13,7 @@ function increaseMoves() {
         movesCount++;
     }
     localStorage.setItem('moves', movesCount);
-    moves.innerHTML = 'Moves: ' + movesCount;
+    language === 'EN' ? moves.innerHTML = 'Moves: ' + movesCount : moves.innerHTML = 'Ruchy: ' + movesCount;
 }
 
 function resetMoves() {
@@ -22,12 +22,12 @@ function resetMoves() {
 }
 
 function setMovesToZeroInDOM() {
-    moves.innerHTML = 'Moves: 0';
+    language === 'EN' ? moves.innerHTML = 'Moves: 0' : moves.innerHTML = 'Ruchy: 0';
 }
 
 function loadMovesFromLs() {
     movesCount = localStorage.getItem('moves');
-    moves.innerHTML = 'Moves: ' + movesCount;
+    language === 'EN' ? moves.innerHTML = 'Moves: ' + movesCount : moves.innerHTML = 'Ruchy: ' + movesCount;
 }
 
 loadMovesFromLs();

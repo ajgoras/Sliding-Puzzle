@@ -13,7 +13,7 @@ function loadTimerFromLs() {
 function checkCountdown() {
     if (countdownRun == false) {
         countdownTime = 0;
-        timer.innerHTML = 'Time: 0:00';
+        language === 'EN' ? timer.innerHTML = 'Time: 0:00' : timer.innerHTML = 'Czas: 0:00';
         startCountdown();
     }
 }
@@ -35,7 +35,7 @@ function stopCountdown() {
 function resetCountdown() {
     countdownTime = 0;
     localStorage.setItem('time', countdownTime);
-    timer.innerHTML = 'Time: 0:00';
+    language === 'EN' ? timer.innerHTML = 'Time: 0:00' : timer.innerHTML = 'Czas: 0:00';
 }
 
 function formatTime(time) {
@@ -48,7 +48,7 @@ function updateDOMCountdown() {
     countdownTime++;
     let formattedTime = countdownTime;
     formattedTime = formatTime(formattedTime);
-    timer.innerHTML = 'Time: ' + formattedTime;
+    language === 'EN' ? timer.innerHTML = 'Time: ' + formattedTime : timer.innerHTML = 'Czas: ' + formattedTime;
     localStorage.setItem('time', countdownTime);
 }
 
