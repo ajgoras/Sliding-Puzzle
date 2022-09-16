@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="background" aria-hidden="true">
+    <div id="gameInfoDiv" class="opacity0">
+        <div id="gameInfoDivInside">
+            <div id="gameInfoDivInsideInside">
+                <button id="closeInfoButton">X</button>
+                <iframe src="infoPage.html"></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="backgrounddiv" class="background" aria-hidden="true">
         <div class="background_ball"></div>
         <div class="background_ball"></div>
         <div class="background_ball"></div>
@@ -16,6 +24,7 @@
     <div id="alertdiv">
     </div>
     <div id="langButtondiv">
+        <button id="infoButton">i</button>
         <button class="revealtime" id="langButton">
           <div id="plendiv">
             <p>PL</p>
@@ -90,5 +99,6 @@
     <script src="src/moves.js"></script>
     <script src="src/timer.js"></script>
     <script src="src/language.js"></script>
+    <script src="src/info.js"></script>
 </body>
 </html>

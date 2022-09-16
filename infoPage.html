@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styleInfoPage.css">
+  <title>Info</title>
+</head>
+<body>
+  <header>
+    <h1>Sliding Puzzle Game</h1>
+  </header>
+  <main>
+    <div id="headerDescription">
+      <div class="gamePresentation">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block" id="emptyBlock"></div>
+      </div>
+      <div id="winInfodiv">
+        <p id="winInfo" class="invisible">YOU WIN!</p>
+      </div>
+      <div id="mainDescription">
+        <h3>Click on the blocks that are near the empty space to move the puzzle. Break records in the shortest time and with the least number of moves.
+          Solve your own pictures in different difficulty levels.</h3>
+      </div>
+    </div>
+    <div id="features">
+      <div class="features-row">
+        <div class="feature-square">
+          <img src="img/changingPhotoWide.png" class="feature-square-image">
+          <h2>Solve other puzzle</h2>
+          <p>You can change the photo you want to solve by clicking on the Image Menu button and select the photo using the arrows or dots.</p>
+        </div>
+        <div class="feature-square">
+          <img src="img/ownPhotos.png" class="feature-square-image">
+          <h2>Or anything You want</h2>
+          <p>Don't limit yourself!
+            You can add your own photo whatever you want. Remember to make the photo square, otherwise it will be stretched.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="src/inforeveal.js"></script>
+  <script src="src/infoPageScript.js"></script>
+</body>
+</html>

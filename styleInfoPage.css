@@ -1,0 +1,211 @@
+body{
+    background-color: whitesmoke;
+    font-family: Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 80px;
+}
+
+#headerDescription{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 300px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.gamePresentation{
+    height: 300px;
+    width: 300px;
+    /* display: flex;
+    flex-wrap: wrap; */
+    position: relative;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3 ease-in-out;
+}
+
+.block{
+    position: absolute;
+    border: dashed rgba(255, 255, 255, 0.450) 1px;
+    height: 100px;
+    width: 100px;
+    color: transparent;
+    font-size: 25px;
+    transition: top 0.22s linear, left 0.22s linear,background-position 0.22s linear;
+    background-image: url(img/ritka.jpg);
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
+}
+#emptyBlock{
+    background: none;
+    border: none;
+}
+
+#winInfodiv{
+    display: flex;
+    position: absolute;
+    text-align: center;
+    justify-content: center;   
+}
+
+#winInfo{
+    margin-left: 40px;
+    margin-top: 40px;
+    user-select: none;
+    pointer-events: none;
+    text-align: center;
+    color: rgb(216, 184, 5);
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bounce-win {
+    animation-name: bounce-win;
+    animation-duration: 1.4s;
+    animation-iteration-count:3;
+    transform-origin: bottom;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce-win {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-20px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
+}
+
+.invisible{
+    opacity: 0 !important;
+}
+
+
+#mainDescription{
+}
+
+.features-row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 50px;
+    margin-top: 200px;
+}
+
+.feature-square{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    background-color: darkgray;
+    /* height: 450px;
+    width: 390px; */
+}
+.feature-square p{
+    margin: 20px;
+    margin-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.feature-square h2{
+    margin-bottom: 0;
+}
+.feature-square:nth-child(1){
+    flex: 0.56;
+}
+.feature-square:nth-child(2){
+    flex: 0.4;
+}
+
+.feature-square-image{
+    /* margin-top: 5px; */
+    border-radius: 20px;
+    height: 280px;
+    width: auto;
+}
+
+@media only screen and (max-width: 720px) {
+    main{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+    }
+    #headerDescription{
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 90px;
+    }
+    #winInfo{
+        margin-top: -170px;
+        margin-left: 0px;
+    }
+    .features-row{
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+    .feature-square-image{
+        height: auto;
+        width: 420px;
+    }
+    .feature-square-image:nth-child(1){
+        
+    }
+    .feature-square:nth-child(1){
+        flex: 1;
+    }
+    .feature-square:nth-child(2){
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    main{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 50px;
+    }
+    #headerDescription{
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 90px;
+    }
+    #winInfo{
+        margin-top: -170px;
+        margin-left: 0px;
+    }
+    .features-row{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .feature-square-image{
+        height: auto;
+        width: 340px;
+    }
+    .feature-square-image:nth-child(1){
+        
+    }
+    .feature-square:nth-child(1){
+        flex: 1;
+    }
+    .feature-square:nth-child(2){
+        flex: 1;
+    }
+}
