@@ -16,20 +16,25 @@ main{
 
 #headerDescription{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 300px;
+    gap: 200px;
     padding-left: 100px;
     padding-right: 100px;
+    margin-bottom: 200px;
+}
+
+#mainDescriptionTextDiv{
+    background-color: darkgray;
+    padding: 15px;
+    border-radius: 15px;
+    max-width: 300px;
 }
 
 .gamePresentation{
     height: 300px;
     width: 300px;
-    /* display: flex;
-    flex-wrap: wrap; */
     position: relative;
-    opacity: 1;
     -webkit-transition: opacity 0.3s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
     -ms-transition: opacity 0.3s ease-in-out;
@@ -48,6 +53,7 @@ main{
     background-image: url(img/ritka.jpg);
     background-size: 300px 300px;
     background-repeat: no-repeat;
+    z-index: 1;
 }
 #emptyBlock{
     background: none;
@@ -56,14 +62,15 @@ main{
 
 #winInfodiv{
     display: flex;
-    position: absolute;
-    text-align: center;
-    justify-content: center;   
+    justify-content: center;
+    align-items: center;
 }
 
 #winInfo{
-    margin-left: 40px;
-    margin-top: 40px;
+    min-width: 230px;
+    margin-top: 330px;
+    z-index: 2;
+    position: absolute;
     user-select: none;
     pointer-events: none;
     text-align: center;
@@ -101,7 +108,7 @@ main{
     justify-content: center;
     flex-wrap: nowrap;
     gap: 50px;
-    margin-top: 200px;
+    margin-bottom: 20px;
 }
 
 .feature-square{
@@ -111,8 +118,6 @@ main{
     align-items: center;
     border-radius: 20px;
     background-color: darkgray;
-    /* height: 450px;
-    width: 390px; */
 }
 .feature-square p{
     margin: 20px;
@@ -131,12 +136,72 @@ main{
 }
 
 .feature-square-image{
-    /* margin-top: 5px; */
     border-radius: 20px;
     height: 280px;
     width: auto;
 }
 
+
+@media only screen and (max-width: 1050px) {
+
+    main{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+    }
+    #headerDescription{
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 90px;
+    }
+    #winInfo{
+        margin-top: 330px;
+        margin-left: 0px;
+    }
+    .features-row{
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+    .feature-square-image{
+        height: auto;
+        width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    main{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+    }
+    #headerDescription{
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 90px;
+    }
+    #winInfo{
+        margin-top: 330px;
+        margin-left: 0px;
+    }
+    .features-row{
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+    .feature-square-image{
+        height: auto;
+        width: 40vw;
+    }
+    .feature-square:nth-child(1){
+        flex: 1;
+    }
+    .feature-square:nth-child(2){
+        flex: 1;
+    }
+}
 @media only screen and (max-width: 720px) {
     main{
         padding-left: 50px;
@@ -151,7 +216,7 @@ main{
         gap: 90px;
     }
     #winInfo{
-        margin-top: -170px;
+        margin-top: 330px;
         margin-left: 0px;
     }
     .features-row{
@@ -162,9 +227,6 @@ main{
     .feature-square-image{
         height: auto;
         width: 420px;
-    }
-    .feature-square-image:nth-child(1){
-        
     }
     .feature-square:nth-child(1){
         flex: 1;
@@ -188,7 +250,7 @@ main{
         gap: 90px;
     }
     #winInfo{
-        margin-top: -170px;
+        margin-top: 330px;
         margin-left: 0px;
     }
     .features-row{
@@ -198,9 +260,6 @@ main{
     .feature-square-image{
         height: auto;
         width: 340px;
-    }
-    .feature-square-image:nth-child(1){
-        
     }
     .feature-square:nth-child(1){
         flex: 1;

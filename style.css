@@ -553,6 +553,19 @@ input[type="file"] {
 
 
 @media only screen and (max-width: 590px) {
+    #gameInfoDivInside{
+        padding-top: 0px;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-bottom: 20px;
+        background-color: #1b1b1b78;
+        width: 99.5%;
+        position: absolute;
+        z-index: 1 !important;
+    }
+    #closeInfoButton{
+        transform: translate(-18px, 35px);
+    }
     #menudiv button{
         font-size: 2.8vw;
         margin-left: 2px;
