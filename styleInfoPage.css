@@ -103,15 +103,15 @@ main{
 #mainDescription{
 }
 
-.features-row{
+.features-row, .features-row2, .features-row3{
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
     gap: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 
-.feature-square{
+.feature-square, .feature-rectangle{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -119,19 +119,31 @@ main{
     border-radius: 20px;
     background-color: darkgray;
 }
-.feature-square p{
+.feature-rectangle{
+    background: linear-gradient(
+        to top right,
+        #160b3d,
+        #326862
+    );
+    color: lightgray;
+}
+.feature-square p, .feature-rectangle p{
     margin: 20px;
     margin-top: 10px;
     padding-left: 50px;
     padding-right: 50px;
 }
-.feature-square h2{
+.feature-rectangle p{
+    padding-left: 25vw;
+    padding-right: 25vw;
+}
+.feature-square h2, .feature-rectangle h2{
     margin-bottom: 0;
 }
-.feature-square:nth-child(1){
+.features-row.feature-square:nth-child(1){
     flex: 0.56;
 }
-.feature-square:nth-child(2){
+.features-row.feature-square:nth-child(2){
     flex: 0.4;
 }
 
@@ -139,6 +151,29 @@ main{
     border-radius: 20px;
     height: 280px;
     width: auto;
+}
+.feature-rectangle-image{
+    border-radius: 20px;
+    height: 250px;
+    width: auto;
+    padding-right: 28vw;
+    padding-left: 15vw;
+}
+
+#timerPresentation{
+    pointer-events: none;
+    user-select: none;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 50px;
+}
+
+#timerPresentation p {
+    padding: 0;
+    opacity: 0.6;
 }
 
 
@@ -163,10 +198,24 @@ main{
     .features-row{
         flex-wrap: nowrap;
         gap: 20px;
+        margin-bottom: 20px;
+    }
+    .features-row2{
+        flex-wrap: nowrap;
+        gap: 20px;
+        margin-bottom: 20px;
     }
     .feature-square-image{
         height: auto;
         width: 40vw;
+    }
+    .feature-rectangle-image{
+        height: auto;
+        width: 40vw;
+    }
+    .features-row2 .feature-square .feature-square-image{
+        height: auto;
+        width: 25vw;
     }
 }
 
@@ -191,9 +240,17 @@ main{
         flex-wrap: nowrap;
         gap: 20px;
     }
+    .features-row2{
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
     .feature-square-image{
         height: auto;
         width: 40vw;
+    }
+    .features-row2 .feature-square .feature-square-image{
+        height: auto;
+        width: 25vw;
     }
     .feature-square:nth-child(1){
         flex: 1;
@@ -221,18 +278,43 @@ main{
     }
     .features-row{
         flex-wrap: wrap;
-
+        gap: 20px;
+    }
+    .features-row2{
+        flex-wrap: wrap;
         gap: 20px;
     }
     .feature-square-image{
         height: auto;
         width: 420px;
     }
+    .feature-rectangle-image{
+        height: auto;
+        width: 260px;
+    }
+    .feature-rectangle p{
+        margin: 15px;
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+    .features-row2 .feature-square .feature-square-image{
+        height: auto;
+        width: 350px;
+    }
     .feature-square:nth-child(1){
         flex: 1;
     }
     .feature-square:nth-child(2){
         flex: 1;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .feature-rectangle-image{
+        height: auto;
+        width: 200px;
+        padding-right: 21vw;
+        padding-left: 10vw;
     }
 }
 
@@ -257,9 +339,28 @@ main{
         flex-wrap: wrap;
         gap: 20px;
     }
+    .features-row2{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
     .feature-square-image{
         height: auto;
         width: 340px;
+    }
+    .feature-rectangle-image{
+        height: auto;
+        width: 150px;
+        padding-right: 5vw;
+        padding-left: 2vw;
+    }
+    .feature-rectangle p{
+        margin: 9px;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+    .features-row2 .feature-square .feature-square-image{
+        height: auto;
+        width: 300px;
     }
     .feature-square:nth-child(1){
         flex: 1;
