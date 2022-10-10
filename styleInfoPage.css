@@ -111,7 +111,7 @@ main{
 #mainDescription{
 }
 
-.features-row, .features-row2, .features-row3, .features-row4{
+.features-row, .features-row2, .features-row3, .features-row4, .features-row5{
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
@@ -259,6 +259,45 @@ main{
     margin-bottom: 70px;
 }
 
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.local-storage-info-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.local-storage-info-div h2{
+    font-size: 44px;
+    margin-bottom: 0;
+}
+.local-storage-info-div h4{
+    margin-top: 20px;
+    font-size: 30px;
+    color: rgb(70, 70, 70);
+}
+.local-storage-info-div p{
+    color: rgb(81, 81, 81);
+    font-size: 17.5px;
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+.local-storage-info-div p:nth-of-type(2){
+    margin-right: auto;
+}
+.selected-word-close{
+    color: firebrick;
+}
+.selected-word-continue{
+    color: darkcyan;
+}
+
 @media only screen and (max-width: 1050px) {
 
     main{
@@ -329,6 +368,9 @@ main{
     .features-row3{
         margin-bottom: 20px;
     }
+    .features-row4{
+        margin-bottom: 20px;
+    }
     .features-row2 .feature-square .feature-square-image{
         height: auto;
         width: 25vw;
@@ -390,6 +432,15 @@ main{
     }
     .icon{
     margin: -33px 0px;
+    }
+    .local-storage-info-div h2{
+        font-size: 38px;
+    }
+    .local-storage-info-div h4{
+        font-size: 27px;
+    }
+    .local-storage-info-div p{
+        font-size: 16.5px;
     }
 }
 
