@@ -1,6 +1,28 @@
 :root {
+    --active-color-bg-dark: #160b3d;
+    --active-color-bg-light: #326862;
+
     --color-bg-dark: #160b3d;
     --color-bg-light: #326862;
+    --color-lightbluepink-light: #c03450;
+    --color-lightbluepink-dark: #263998;
+    --color-darkgreengold-light:#645e05;
+    --color-darkgreengold-dark: #2e5c27;
+    --color-darknavygray-light: #171f4b;
+    --color-darknavygray-dark: #1a1a1a;
+
+    --selectedColor: #f4f4f4ba;
+
+    --active-button-purple: #833ab4;
+    --active-button-red:#fd1d1d;
+    --button-purple: #833ab4;
+    --button-red:#fd1d1d;
+    --button-darkblue: #1b5699;
+    --button-lightgreen: #029e75;
+    --button-orange: #ab7534;
+    --button-yellow: #5e5806;
+    --button-darkpink: #63274b;
+    --button-darkpurple: #3c0425;
 }
 
 *{
@@ -23,8 +45,8 @@ p{
 body{
     background: linear-gradient(
         to top right,
-        var(--color-bg-dark),
-        var(--color-bg-light)
+        var(--active-color-bg-dark),
+        var(--active-color-bg-light)
     );
     color: #1b1b1b;
     height: 100vh;
@@ -104,7 +126,7 @@ body{
     align-items: center;
     gap: 5px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 7px;
     position: relative;
 }
 
@@ -113,10 +135,10 @@ button{
     cursor: pointer;
     border-radius: 500px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: -webkit-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -moz-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -o-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));
+    background: -webkit-linear-gradient(var(--active-button-purple),var(--active-button-red));  
+    background: -moz-linear-gradient(var(--active-button-purple),var(--active-button-red));  
+    background: -o-linear-gradient(var(--active-button-purple),var(--active-button-red));  
+    background: linear-gradient(var(--active-button-purple),var(--active-button-red));
     -webkit-transition: background 0.4s ease-out;  
     -moz-transition: background 0.4s ease-out;  
     -o-transition: background 0.4s ease-out;  
@@ -209,7 +231,7 @@ iframe{
 }
 
 .icon {
-    background-color: rgba(131,58,180,1);
+    background-color: var(--active-button-purple);
     border-radius: 100%;
     content: "";
     display: block;
@@ -230,6 +252,108 @@ iframe{
     transform: translateX(-55%);
     transition: color 0.3s;
     width: 100%;
+}
+
+#colorPickerBtndiv{
+    z-index: 1;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#colorPickerBtn{
+    border-radius: 11px;
+    height: 27px;
+    width: 27px;
+}
+
+.colorCircle {
+    padding: 2px;
+    margin: 5px 6px 5px -2.5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: width 0.25s, height 0.25s, margin 0.25s;
+}
+.colorCircle:hover{
+    cursor: pointer;
+    margin: 5px 6px 5px -5px;
+    height: 37px;
+    width: 37px;
+}
+.active {
+    border: 3px solid var(--selectedColor);
+}
+
+#greenBlueCircle{
+    background: linear-gradient(
+        to top right,
+        var(--color-bg-dark),
+        var(--color-bg-light)
+    );
+}
+#lightBluePinkCircle{
+    background: linear-gradient(
+        to top right,
+        var(--color-lightbluepink-dark),
+        var(--color-lightbluepink-light)
+    );
+}
+#darkGreenGoldCircle{
+    background: linear-gradient(
+        to top right,
+        var(--color-darkgreengold-dark),
+        var(--color-darkgreengold-light)
+    );
+}
+#darkNavyGrayCircle{
+    background: linear-gradient(
+        to top right,
+        var(--color-darknavygray-dark),
+        var(--color-darknavygray-light)
+    )
+}
+
+.scale-up-top {
+    -webkit-animation: scale-up-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-up-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.scale-up-top-reverse {
+    -webkit-animation: scale-up-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+    animation: scale-up-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
+@-webkit-keyframes scale-up-top {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+    }
+}
+
+@keyframes scale-up-top {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+    }
 }
 
 
@@ -415,10 +539,10 @@ input[type="file"] {
     cursor: pointer;
     border-radius: 500px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: -webkit-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -moz-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: -o-linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));  
-    background: linear-gradient(rgba(131,58,180,1),rgba(253,29,29,1));
+    background: -webkit-linear-gradient(var(--active-button-purple),var(--active-button-red));  
+    background: -moz-linear-gradient(var(--active-button-purple),var(--active-button-red));  
+    background: -o-linear-gradient(var(--active-button-purple),var(--active-button-red));  
+    background: linear-gradient(var(--active-button-purple),var(--active-button-red));
     -webkit-transition: background 0.4s ease-out;  
     -moz-transition: background 0.4s ease-out;  
     -o-transition: background 0.4s ease-out;  
@@ -553,6 +677,10 @@ input[type="file"] {
 
 
 @media only screen and (max-width: 590px) {
+    #colorPickerBtndiv{
+        margin-left: 10px;
+        margin-top: 62px;
+    }
     #gameInfoDivInside{
         padding-top: 0px;
         padding-left: 2px;
@@ -589,5 +717,11 @@ input[type="file"] {
         height: 8vw;
         width: 19vw;
         margin-left: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 490px) {
+    #colorPickerBtndiv{
+        margin-top: 49px;
     }
   }

@@ -24,16 +24,25 @@
     <div id="alertdiv">
     </div>
     <div id="langButtondiv">
-        <button id="infoButton">i</button>
+        <button class="revealtime" id="infoButton">i</button>
         <button class="revealtime" id="langButton">
-          <div id="plendiv">
-            <p>PL</p>
-            <p>EN</p>
-          </div>
-          <span id="langSpan">Language</span>
-          <div class="icon"></div>
+            <div id="plendiv">
+                <p>PL</p>
+                <p>EN</p>
+            </div>
+            <span id="langSpan">Language</span>
+            <div class="icon"></div>
         </button>
-      </div>
+    </div>
+    <div id="colorPickerBtndiv">
+        <button class="revealtime" id="colorPickerBtn">🎨</button>
+        <div id="colors" class="invisible">
+            <div id="greenBlueCircle" class="colorCircle active"></div>
+            <div id="lightBluePinkCircle" class="colorCircle"></div>
+            <div id="darkGreenGoldCircle" class="colorCircle"></div>
+            <div id="darkNavyGrayCircle" class="colorCircle"></div>
+        </div>
+    </div>
     <div id="menudiv" class="revealtime">
         <button id="selectImgBtn">Image Menu</button>
         <button id="difficultyBtn">Difficulty</button>
@@ -100,5 +109,6 @@
     <script src="src/timer.js"></script>
     <script src="src/language.js"></script>
     <script src="src/info.js"></script>
+    <script src="src/colorPicker.js"></script>
 </body>
 </html>
