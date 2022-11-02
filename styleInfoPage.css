@@ -125,8 +125,43 @@ main{
     justify-content: flex-start;
     align-items: center;
     border-radius: 20px;
-    background-color: darkgray;
+    background: linear-gradient(
+        to top right,
+        #171f4b,
+        #1a1a1a
+    );
+    color: lightgray;
 }
+
+.features-row .feature-square:nth-of-type(2){
+    background: linear-gradient(
+        to top right,
+        #c03450,
+        #1a1a1a
+    );
+}
+.features-row2 .feature-square:nth-of-type(1){
+    background: linear-gradient(
+        to top right,
+        #3c0425,
+        #5e5806
+    );
+}
+.features-row2 .feature-square:nth-of-type(2){
+    background: linear-gradient(
+        to top right,
+        #4b2c60,
+        #160b3d
+    );
+}
+.features-row2 .feature-square:nth-of-type(3){
+    background: linear-gradient(
+        to top right,
+        #326862,
+        #c03450
+    );
+}
+
 .feature-rectangle{
     background: linear-gradient(
         to top right,
