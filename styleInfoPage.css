@@ -108,9 +108,6 @@ main{
 }
 
 
-#mainDescription{
-}
-
 .features-row, .features-row2, .features-row3, .features-row4, .features-row5{
     display: flex;
     justify-content: center;
