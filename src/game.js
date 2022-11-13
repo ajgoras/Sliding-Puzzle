@@ -145,6 +145,8 @@ function resetPuzzle() {
     resetCountdown();
     resetMoves();
     setMovesToZeroInDOM();
+    isGameMixedForHighScore = 'false';
+    localStorage.setItem('isGameMixedForHighScore', 'false');
 }
 
 function saveGameToLs() {

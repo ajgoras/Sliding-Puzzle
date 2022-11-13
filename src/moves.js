@@ -17,8 +17,10 @@ function increaseMoves() {
 }
 
 function resetMoves() {
-    movesCount = 0;
-    localStorage.setItem('moves', movesCount);
+    setTimeout(() => {
+        movesCount = 0;
+        localStorage.setItem('moves', movesCount);
+    }, 550);
 }
 
 function setMovesToZeroInDOM() {

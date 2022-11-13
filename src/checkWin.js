@@ -131,5 +131,6 @@ function applyWin() {
     stopCountdown();
     winInfo.classList.add('bounce-win');
     winInfo.classList.remove('invisible');
+    addRecordToLocalStorage();
     setTimeout(() => {winInfo.classList.add('invisible'); winInfo.classList.remove('bounce-win') }, 3600);
 }

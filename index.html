@@ -43,6 +43,9 @@
             <div id="darkNavyGrayCircle" class="colorCircle"></div>
         </div>
     </div>
+    <div id="recordsBtndiv">
+        <button class="revealtime" id="recordsBtn">🏆</button>
+    </div>
     <div id="menudiv" class="revealtime">
         <button id="selectImgBtn">Image Menu</button>
         <button id="difficultyBtn">Difficulty</button>
@@ -93,6 +96,10 @@
         <p id="moves">Moves: 0</p>
         <p id="timer">Time: 0:00</p>
     </div>
+    <div id="recordsDiv" class="opacity0WithTranslate">
+        <p>Your best number of moves on {difficulty} difficulty</p>
+        <p>Your best time on {difficulty} difficulty</p>
+    </div>
     <photos id="photos">
         <img id="photo0" src="img/ritka.jpg">
         <img id="photo1" src="img/maniek.jpg">
@@ -110,5 +117,6 @@
     <script src="src/language.js"></script>
     <script src="src/info.js"></script>
     <script src="src/colorPicker.js"></script>
+    <script src="src/records.js"></script>
 </body>
 </html>

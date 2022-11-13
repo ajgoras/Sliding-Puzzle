@@ -254,6 +254,33 @@ iframe{
     width: 100%;
 }
 
+#recordsBtndiv{
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+#recordsBtn{
+    position: absolute;
+    height: 27px;
+    width: 27px;
+    margin-right: 11px;
+    margin-top: 10px;
+    border-radius: 11px;
+}
+
+#recordsDiv{
+    opacity: .7;
+    padding-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    flex-direction: column;
+    gap: 10px;
+    transition: all .3s ease-in-out;
+}
+
 #colorPickerBtndiv{
     z-index: 1;
     position: absolute;
@@ -643,6 +670,10 @@ input[type="file"] {
 .opacity0{
     opacity: 0 !important;
 }
+.opacity0WithTranslate{
+    opacity: 0 !important;
+    transform: translateY(-25px);
+}
 
 @keyframes bounce-win {
     0%   { transform: scale(1,1)    translateY(0); }
@@ -679,7 +710,10 @@ input[type="file"] {
 @media only screen and (max-width: 590px) {
     #colorPickerBtndiv{
         margin-left: 10px;
-        margin-top: 62px;
+        margin-top: 60px;
+    }
+    #recordsBtn{
+        margin-top: 60px;
     }
     #gameInfoDivInside{
         padding-top: 0px;
@@ -722,6 +756,26 @@ input[type="file"] {
 
   @media only screen and (max-width: 490px) {
     #colorPickerBtndiv{
-        margin-top: 49px;
+        margin-top: 55px;
+    }
+    #recordsBtn{
+        margin-top: 55px;
+    }
+  }
+
+  @media only screen and (max-width: 380px){
+    #colorPickerBtndiv{
+        margin-top: 47px;
+    }
+    #colorPickerBtn{
+        height: 22px;
+        width: 22px;
+        border-radius: 7px;
+    }
+    #recordsBtn{
+        width: 22px;
+        height: 22px;
+        margin-top: 47px;
+        border-radius: 7px;
     }
   }

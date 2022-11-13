@@ -53,6 +53,7 @@ function changeLanguageTo(lang) {
         language = 'EN';
         localStorage.setItem('language', language);
     }
+    updateRecordsInDOM();
 }
 
 loadLanguageFromLs();

@@ -487,5 +487,6 @@ function mixPuzzles() {
     resetMoves();
     setMovesToZeroInDOM();
     document.querySelector('#mixBtn').classList.add('bounce');
+    startMonitoringHighScore();
     setTimeout(() => {  document.querySelector('#mixBtn').classList.remove('bounce') }, 700);
 }
