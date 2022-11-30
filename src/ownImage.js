@@ -44,6 +44,18 @@ function deleteUploadedPhotos() {
 
 function addUploadedImageToGame(sourceImg) {
     photos.push(sourceImg);
+    blocks = document.getElementsByClassName('block');
+    for (let i = 0; i < blocks.length-1; i++) {
+        blocks[i].style.backgroundImage = `url(${sourceImg})`;
+    }
+    document.getElementById("slide").style.backgroundImage = `url(${uploadedImage})`;
+    openSlider();
+    alertdiv.style.display = 'none';
+    if (alertdiv.hasChildNodes() == true) {
+        while (alertdiv.firstChild) {
+            alertdiv.removeChild(alertdiv.lastChild);
+        }
+    }    
     let newDot = document.createElement('div');
     let newDotId = dots.childElementCount + 1;
     newDot.id = 'dot' + newDotId;
@@ -80,19 +92,7 @@ imageInput.addEventListener('change', function () {
         gameField.classList.toggle('fade');
         setTimeout(() => {
             uploadedImage = reader.result;
-            blocks = document.getElementsByClassName('block');
-            for (let i = 0; i < blocks.length-1; i++) {
-                blocks[i].style.backgroundImage = `url(${uploadedImage})`;
-            }
             addUploadedImageToGame(uploadedImage);
-            document.getElementById("slide").style.backgroundImage = `url(${uploadedImage})`;
-            openSlider();
-            alertdiv.style.display = 'none';
-            if (alertdiv.hasChildNodes() == true) {
-                while (alertdiv.firstChild) {
-                    alertdiv.removeChild(alertdiv.lastChild);
-                }
-            }    
             setTimeout(() => {
                 gameField.classList.toggle('fade');
             }, 20);
