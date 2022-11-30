@@ -66,6 +66,7 @@ function addUploadedImageToGame(sourceImg) {
         activephoto = newDotId - 1;
         mixingSound.play();
     })
+    activephoto = newDotId - 1;
     localStorage.setItem('ownPhotos', JSON.stringify(photos));
     saveActivePhotoToLs(newDotId-1);
 }
