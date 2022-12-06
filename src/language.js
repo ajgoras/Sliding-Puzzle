@@ -1,6 +1,11 @@
 let language;
 let langButton = document.getElementById('langButton');
 let langSpan = document.getElementById('langSpan');
+let imageAspectRatiodivText1 = document.getElementById('imageAspectRatiodivText1');
+let imageAspectRatiodivText2 = document.getElementById('imageAspectRatiodivText2');
+let stretchImageBtn = document.getElementById('stretchImageBtn');
+let cropImageBtn = document.getElementById('cropImageBtn');
+
 function loadLanguageFromLs() {
     if (localStorage.getItem('language')==null) {
         language = 'EN';
@@ -32,6 +37,10 @@ function changeLanguageTo(lang) {
         langSpan.innerText = 'Język';
         countdownRun ? timer.innerText = 'Czas: ' + formatTime(countdownTime) : timer.innerText = 'Czas: 0:00';
         moves.innerText = 'Ruchy: ' + movesCount;
+        imageAspectRatiodivText1.innerText = 'Zdjęcie nie jest kwadratowe';
+        imageAspectRatiodivText2.innerText = 'Wybierz co chcesz zrobić';
+        stretchImageBtn.innerText = 'Rozciągnij';
+        cropImageBtn.innerText = 'Przytnij';
         language = 'PL';
         localStorage.setItem('language', language);
     }
@@ -50,6 +59,10 @@ function changeLanguageTo(lang) {
         langSpan.innerText = 'Language';
         countdownRun ? timer.innerText = 'Time: ' + formatTime(countdownTime) : timer.innerText = 'Time: 0:00';
         moves.innerText = 'Moves: ' + movesCount;
+        imageAspectRatiodivText1.innerText = 'Image is not square';
+        imageAspectRatiodivText2.innerText = 'Select operation';
+        stretchImageBtn.innerText = 'Stretch';
+        cropImageBtn.innerText = 'Crop';
         language = 'EN';
         localStorage.setItem('language', language);
     }

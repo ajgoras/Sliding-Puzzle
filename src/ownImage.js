@@ -4,7 +4,7 @@ let addOwnImageLabel = document.querySelector('#selectBtndiv label');
 let dots = document.querySelector('#dots');
 let photosLs = JSON.parse(localStorage.getItem('ownPhotos'));
 let deleteUploadedPhotosBtn = document.querySelector('#deleteUploadedPhotosBtn');
-
+let imageToCrop = '';
 function loadOwnImages() {
     if (photosLs != null) {
         for (let i = 0; i < photosLs.length; i++) {
@@ -42,6 +42,45 @@ function deleteUploadedPhotos() {
     localStorage.removeItem('activePhoto');
 }
 
+function checkPhotoBeforeUpload(sourceImg) {
+    let sourceImgWidth = 0;
+    let sourceImgHeight = 0;
+    let sourceImgElement = document.createElement('img');
+    let imageProportions = 0;
+    sourceImgElement.src = sourceImg;
+    sourceImgElement.classList.add('sourceImgElement');
+    document.getElementById('photos').appendChild(sourceImgElement);
+    document.getElementById('photos').style.display = 'block';
+    document.getElementById('photos').style.visibility = 'hidden';
+    let sourceImgElementsInDOM = document.querySelectorAll('.sourceImgElement');
+    setTimeout(() => {
+        sourceImgHeight = sourceImgElementsInDOM[sourceImgElementsInDOM.length - 1].getBoundingClientRect().height;
+        sourceImgWidth = sourceImgElementsInDOM[sourceImgElementsInDOM.length - 1].getBoundingClientRect().width;
+        document.getElementById('photos').removeChild(sourceImgElementsInDOM[sourceImgElementsInDOM.length - 1]);
+    }, 10);
+    setTimeout(() => {
+        document.getElementById('photos').style.display = 'none';
+        console.log(`${sourceImgHeight} ${sourceImgWidth}`);
+        if (sourceImgHeight<sourceImgWidth) {
+            imageProportions = sourceImgHeight / sourceImgWidth;
+        }
+        else {
+            imageProportions = sourceImgWidth / sourceImgHeight;
+        }
+        console.log(imageProportions);
+        if (imageProportions<0.92) {
+            document.getElementById('imageAspectRatiodiv').style.display = 'block';
+            imageToCrop = sourceImg;
+        }
+        else {
+            setTimeout(() => {
+                addUploadedImageToGame(uploadedImage);
+                gameField.classList.remove('fade');
+                document.getElementById('imageAspectRatiodiv').style.display = 'none';
+            }, 500);
+        }
+    }, 20);
+}
 function addUploadedImageToGame(sourceImg) {
     photos.push(sourceImg);
     blocks = document.getElementsByClassName('block');
@@ -90,13 +129,10 @@ addOwnImageLabel.addEventListener('click', () => {
 imageInput.addEventListener('change', function () {
     const reader = new FileReader();
     reader.addEventListener('load', () => {
-        gameField.classList.toggle('fade');
+        gameField.classList.add('fade');
         setTimeout(() => {
             uploadedImage = reader.result;
-            addUploadedImageToGame(uploadedImage);
-            setTimeout(() => {
-                gameField.classList.toggle('fade');
-            }, 20);
+            checkPhotoBeforeUpload(uploadedImage);
         }, 200);
     });
     reader.readAsDataURL(this.files[0]);
@@ -106,5 +142,55 @@ deleteUploadedPhotosBtn.addEventListener('click', () => {
     deleteUploadedPhotos();
 })
 
+document.getElementById('stretchImageBtn').addEventListener('click', () => {
+    setTimeout(() => {
+        addUploadedImageToGame(uploadedImage);
+        gameField.classList.remove('fade');
+        document.getElementById('imageAspectRatiodiv').style.display = 'none';
+    }, 200);
+})
+
+function crop(url, aspectRatio) {
+    return new Promise(resolve => {
+        const inputImage = new Image();
+        inputImage.onload = () => {
+            const inputWidth = inputImage.naturalWidth;
+            const inputHeight = inputImage.naturalHeight;
+            const inputImageAspectRatio = inputWidth / inputHeight;
+            let outputWidth = inputWidth;
+            let outputHeight = inputHeight;
+            if (inputImageAspectRatio > aspectRatio) {
+                outputWidth = inputHeight * aspectRatio;
+            } else if (inputImageAspectRatio < aspectRatio) {
+                outputHeight = inputWidth / aspectRatio;
+            }
+            if (outputHeight>1500 || outputWidth>1500) {
+                outputHeight = outputHeight / 2;
+                outputWidth = outputWidth / 2;
+            }
+            const outputX = (outputWidth - inputWidth) * .5;
+            const outputY = (outputHeight - inputHeight) * .5;
+            const outputImage = document.createElement('canvas');
+            outputImage.width = outputWidth;
+            outputImage.height = outputHeight;
+            const ctx = outputImage.getContext('2d');
+            ctx.drawImage(inputImage, outputX, outputY);
+            resolve(outputImage);
+        };
+        inputImage.src = url;
+    });
+};
+
+document.getElementById('cropImageBtn').addEventListener('click', () => {
+    crop(imageToCrop, 1 / 1).then(canvas => {
+        let image = new Image();
+        image = canvas.toDataURL();
+        setTimeout(() => {
+            addUploadedImageToGame(image);
+            document.getElementById('imageAspectRatiodiv').style.display = 'none';
+            gameField.classList.remove('fade');
+        }, 800);
+    });
+})
 loadOwnImages();
 loadActivePhotoFromLs();

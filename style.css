@@ -383,6 +383,22 @@ iframe{
     }
 }
 
+#imageAspectRatiodiv{
+    display: none;
+    margin-top: 15px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#imageAspectRatiodiv div{
+    margin: 20px;
+}
+#imageAspectRatiodiv button{
+    margin: 0px 4px 0px 4px;
+    width: 100px;
+    height: 40px;
+}
+
 
 #menudiv button{
     font-size: 15px;
