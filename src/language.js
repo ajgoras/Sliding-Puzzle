@@ -5,6 +5,7 @@ let imageAspectRatiodivText1 = document.getElementById('imageAspectRatiodivText1
 let imageAspectRatiodivText2 = document.getElementById('imageAspectRatiodivText2');
 let stretchImageBtn = document.getElementById('stretchImageBtn');
 let cropImageBtn = document.getElementById('cropImageBtn');
+let ownPhotosWarningParagraph = document.getElementById('ownPhotosWarningParagraph');
 
 function loadLanguageFromLs() {
     if (localStorage.getItem('language')==null) {
@@ -41,6 +42,7 @@ function changeLanguageTo(lang) {
         imageAspectRatiodivText2.innerText = 'Wybierz co chcesz zrobić';
         stretchImageBtn.innerText = 'Rozciągnij';
         cropImageBtn.innerText = 'Przytnij';
+        ownPhotosWarningParagraph.innerText = "Nie możesz dodać więcej zdjęć!";
         language = 'PL';
         localStorage.setItem('language', language);
     }
@@ -63,6 +65,7 @@ function changeLanguageTo(lang) {
         imageAspectRatiodivText2.innerText = 'Select operation';
         stretchImageBtn.innerText = 'Stretch';
         cropImageBtn.innerText = 'Crop';
+        ownPhotosWarningParagraph.innerText = "You can't add more own images!";
         language = 'EN';
         localStorage.setItem('language', language);
     }

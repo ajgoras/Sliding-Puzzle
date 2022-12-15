@@ -42,6 +42,31 @@ function deleteUploadedPhotos() {
     localStorage.removeItem('activePhoto');
 }
 
+function checkLocalStorageSize() {
+    var _lsTotal = 0,
+      _xLen,
+      _x;
+    for (_x in localStorage) {
+      if (!localStorage.hasOwnProperty(_x)) {
+        continue;
+      }
+      _xLen = (localStorage[_x].length + _x.length) * 2;
+      _lsTotal += _xLen;
+    }
+    let localStorageSize = parseInt((_lsTotal / 1024).toFixed(2));
+    console.log(localStorageSize);
+    if (localStorageSize>7500) {
+        document.getElementById('ownPhotosWarningdiv').style.opacity = 1;
+        setTimeout(() => {
+            document.getElementById('ownPhotosWarningdiv').style.opacity = 0;
+        }, 4000);
+        gameField.classList.remove('fade');
+        return false
+    }
+    else {
+        return true
+    }
+}
 function checkPhotoBeforeUpload(sourceImg) {
     let sourceImgWidth = 0;
     let sourceImgHeight = 0;
@@ -131,8 +156,10 @@ imageInput.addEventListener('change', function () {
     reader.addEventListener('load', () => {
         gameField.classList.add('fade');
         setTimeout(() => {
-            uploadedImage = reader.result;
-            checkPhotoBeforeUpload(uploadedImage);
+            if (checkLocalStorageSize()) {
+                uploadedImage = reader.result;
+                checkPhotoBeforeUpload(uploadedImage);
+            }
         }, 200);
     });
     reader.readAsDataURL(this.files[0]);
