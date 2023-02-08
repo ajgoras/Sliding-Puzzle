@@ -19,6 +19,34 @@ function confirmColor(color, colorId, buttonColorA, buttonColorB) {
     localStorage.setItem('colorId', colorId);
     localStorage.setItem('buttonColorA', buttonColorA);
     localStorage.setItem('buttonColorB', buttonColorB);
+    if (color === "lightgray") {
+        document.querySelectorAll('button').forEach((b) => {
+            b.classList.add('lightModeActive');
+        })
+        document.querySelectorAll('p').forEach((b) => {
+            b.classList.add('lightModeActive');
+        })
+        document.querySelectorAll('span').forEach((b) => {
+            b.classList.add('lightModeActive');
+        })
+        document.querySelectorAll('label').forEach((b) => {
+            b.classList.add('lightModeActive');
+        })
+    }
+    else {
+        document.querySelectorAll('button').forEach((b) => {
+            b.classList.remove('lightModeActive');
+        })
+        document.querySelectorAll('p').forEach((b) => {
+            b.classList.remove('lightModeActive');
+        })
+        document.querySelectorAll('span').forEach((b) => {
+            b.classList.remove('lightModeActive');
+        })
+        document.querySelectorAll('label').forEach((b) => {
+            b.classList.remove('lightModeActive');
+        })
+    }
 }
 
 colorCircles[0].addEventListener('click', () => {
@@ -32,6 +60,9 @@ colorCircles[2].addEventListener('click', () => {
 });
 colorCircles[3].addEventListener('click', () => {
     confirmColor('darknavygray', 3, 'darkpink', 'darkpurple');
+});
+colorCircles[4].addEventListener('click', () => {
+    confirmColor('lightgray', 4, 'lightgray', 'darkgray');
 });
 
 colorPickerBtn.addEventListener('click', () => {

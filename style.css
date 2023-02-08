@@ -10,6 +10,8 @@
     --color-darkgreengold-dark: #2e5c27;
     --color-darknavygray-light: #171f4b;
     --color-darknavygray-dark: #1a1a1a;
+    --color-lightgray-light: #e0e0e0;
+    --color-lightgray-dark: #cacaca;
 
     --selectedColor: #f4f4f4ba;
 
@@ -23,6 +25,8 @@
     --button-yellow: #5e5806;
     --button-darkpink: #63274b;
     --button-darkpurple: #3c0425;
+    --button-lightgray: #bcbcbc;
+    --button-darkgray: #4c4c4c;
 }
 
 *{
@@ -33,6 +37,10 @@
 }
 p{
     margin: 0;
+}
+
+p.lightModeActive, button.lightModeActive, span.lightModeActive, label.lightModeActive{
+    color: black !important;
 }
 
 #maindiv, .block{
@@ -338,6 +346,13 @@ iframe{
         to top right,
         var(--color-darknavygray-dark),
         var(--color-darknavygray-light)
+    )
+}
+#lightGrayCircle{
+    background: linear-gradient(
+        to top right,
+        var(--color-lightgray-dark),
+        var(--color-lightgray-light)
     )
 }
 
