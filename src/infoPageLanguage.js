@@ -29,7 +29,7 @@ function changeLanguageTo(lang) {
     h2Headers[7].innerHTML = '<span class="selected-word-close">Wyłącz</span> grę...';
     h4Header.innerHTML = 'I <span class="selected-word-continue">kontynuuj</span> kiedy chcesz.';
     paragraphs[1].innerText = 'Możesz zmienić zdjęcie, które chcesz ułożyć, klikając na przycisk Menu Zdjęć i wybierając zdjęcie za pomocą strzałek lub kropek pod zdjęciem.';
-    paragraphs[2].innerText = 'Nie ograniczaj się! Możesz dodać własne zdjęcie, jakie tylko chcesz. Pamiętaj, aby zdjęcie było kwadratowe, inaczej będzie rozciągnięte.';
+    paragraphs[2].innerText = 'Nie ograniczaj się! Możesz dodać własne zdjęcie, jakie tylko chcesz. Jeśli zdjęcie nie będzie kwadratowe zostaniesz zapytany czy chcesz je przyciąć czy rozciągnąć.';
     paragraphs[3].innerText = 'Kliknij na przycisk zmiany poziomu trudności, aby wybrać poziom trudności i zmienić liczbę puzzli.';
     paragraphs[4].innerText = 'Kliknij przycisk Mieszaj Puzzle i pomieszaj je.';
     paragraphs[5].innerText = 'Kliknij przycisk Resetuj Puzzle, aby przywrócić klocki na ich pierwotne miejsce.';
@@ -49,7 +49,7 @@ function changeLanguageTo(lang) {
     h2Headers[7].innerHTML = '<span class="selected-word-close">Close</span> the game...';
     h4Header.innerHTML = 'And <span class="selected-word-continue">continue</span> whenever you want.';
     paragraphs[1].innerText = 'You can change the photo you want to solve by clicking on the Image Menu button and select the photo using the arrows or dots under the photo.';
-    paragraphs[2].innerText = "Don't limit yourself! You can add your own photo whatever you want. Remember to make the photo square, otherwise it will be stretched.";
+    paragraphs[2].innerText = "Don't limit yourself! You can add your own photo whatever you want. If the photo is not square you will be asked if you want to crop or stretch it.";
     paragraphs[3].innerText = "Click on the change difficulty button to select the difficulty level and change the number of blocks.";
     paragraphs[4].innerText = "Click on the Mix Puzzle button and mix them up.";
     paragraphs[5].innerText = "Click on the Reset Puzzle button to return the blocks to their original place.";
