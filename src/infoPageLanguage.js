@@ -39,6 +39,7 @@ function changeLanguageTo(lang) {
     paragraphs[12].innerText = "W pamięci przeglądarki zapisywany jest stan gry, w tym ustawienia, własne zdjęcia, poziom trudności, czas gry czy liczba ruchów.";
     paragraphs[13].innerText = "Zawsze możesz zamknąć grę i wrócić do niej w dowolnym momencie.";
     isTimerRunning ? timerText.innerText = 'Czas: ' + infoFormatTime(countdownTimer) : timerText.innerText = 'Czas: 0:00';
+    moves.innerText = 'Ruchy: ' + infoMovesCount;
 
   } else {
     language = "EN";
@@ -59,6 +60,7 @@ function changeLanguageTo(lang) {
     paragraphs[6].innerText = "Each of your moves is saved, increasing the number of moves. From the moment you move the first block, the timer starts counting down. Act smart and fast and break your records.";
     paragraphs[13].innerText = "You can always close the game and return to it at any time.";
     isTimerRunning ? timerText.innerText = 'Time: ' + infoFormatTime(countdownTimer) : timerText.innerText = 'Time: 0:00';
+    moves.innerText = 'Moves: ' + infoMovesCount;
   }
 }
 

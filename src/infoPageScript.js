@@ -17,7 +17,12 @@ let infoMoves = document.getElementById('moves');
 function startIncreasingMoves() {
     function increaseMoves() {
         infoMovesCount++;
-        infoMoves.innerText = "Moves: " + infoMovesCount;
+        if (language=='PL') {
+            infoMoves.innerText = "Ruchy: " + infoMovesCount;
+        }
+        else {
+            infoMoves.innerText = "Moves: " + infoMovesCount;
+        }
     }
     function generateRandomNumber() {
         return 1000 * Math.floor(Math.random() * 150) + 10;
