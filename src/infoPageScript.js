@@ -50,7 +50,12 @@ function runCountdown() {
         countdownTimer++;
         let formattedCountdownTimer = countdownTimer;
         formattedCountdownTimer = infoFormatTime(formattedCountdownTimer);
-        infoTimer.innerText = 'Time: ' + formattedCountdownTimer;
+        if (language=="PL") {
+            infoTimer.innerText = 'Czas: ' + formattedCountdownTimer;
+        }
+        else {
+            infoTimer.innerText = 'Time: ' + formattedCountdownTimer;
+        }
     }, 1000);
     stopIntervalAfterTime();
 }
