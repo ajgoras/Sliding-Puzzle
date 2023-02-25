@@ -51,14 +51,13 @@ p.lightModeActive, button.lightModeActive, span.lightModeActive, label.lightMode
 }
 
 body{
-    background: linear-gradient(
-        to top right,
-        var(--active-color-bg-dark),
-        var(--active-color-bg-light)
-    );
     color: #1b1b1b;
     height: 100vh;
-    background-color: #160b3d;
+    background: #160b3d linear-gradient(
+            to top right,
+            var(--active-color-bg-dark),
+            var(--active-color-bg-light)
+    );
 }
 
 .background {
@@ -161,7 +160,7 @@ button:hover{
 }
 
 #infoButton{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 21px;
     border-radius: 11px;
     margin-left: 10px;
@@ -186,10 +185,7 @@ button:hover{
 
 }
 #gameInfoDivInside{
-    padding-top: 5px;
-    padding-left: 35px;
-    padding-right: 35px;
-    padding-bottom: 40px;
+    padding: 5px 35px 40px;
     background-color: #1b1b1b78;
     width: 99.5%;
     position: absolute;
@@ -247,12 +243,11 @@ iframe{
     margin: -16.2px 3px;
     position: absolute;
     width: 18px;
-    transition: background-color 0.3s;
-    transition: transform 0.3s;
+    transition: background-color, transform 0.3s;
 }
 #langSpan{
     bottom: 65%;
-    color: var(--color-main);
+    color: whitesmoke;
     font-size: 11.5px;
     left: 50%;
     padding: 12px 0;
@@ -370,15 +365,15 @@ iframe{
     0% {
         -webkit-transform: scale(0);
         transform: scale(0);
-        -webkit-transform-origin: 50% 0%;
-        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
     }
 
     100% {
         -webkit-transform: scale(1);
         transform: scale(1);
-        -webkit-transform-origin: 50% 0%;
-        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
     }
 }
 
@@ -386,15 +381,15 @@ iframe{
     0% {
         -webkit-transform: scale(0);
         transform: scale(0);
-        -webkit-transform-origin: 50% 0%;
-        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
     }
 
     100% {
         -webkit-transform: scale(1);
         transform: scale(1);
-        -webkit-transform-origin: 50% 0%;
-        transform-origin: 50% 0%;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
     }
 }
 
@@ -424,7 +419,7 @@ iframe{
     margin: 20px;
 }
 #imageAspectRatiodiv button{
-    margin: 0px 4px 0px 4px;
+    margin: 0 4px 0 4px;
     width: 100px;
     height: 40px;
 }
@@ -507,8 +502,7 @@ iframe{
     display: none;
     justify-content: center;
     align-items: center;
-    padding: 5px 10px;
-    padding-right: 0;
+    padding: 5px 0 5px 10px;
     border-radius: 2px;
     position: relative;
 
@@ -534,13 +528,13 @@ iframe{
 }
 
 #arrow-right{
-    border-right: 0px;
+    border-right: 0;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent; 
     border-left: 20px solid #1b1b1bda;
 }
 #arrow-left{
-    border-left: 0px;
+    border-left: 0;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent; 
     border-right: 20px solid #1b1b1bda;
@@ -641,7 +635,7 @@ input[type="file"] {
     -moz-transition: opacity 0.3s ease-in-out;
     -ms-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3 ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 #game.fade{
     opacity:0;
@@ -762,10 +756,7 @@ input[type="file"] {
         margin-top: 60px;
     }
     #gameInfoDivInside{
-        padding-top: 0px;
-        padding-left: 2px;
-        padding-right: 2px;
-        padding-bottom: 20px;
+        padding: 0 2px 20px;
         background-color: #1b1b1b78;
         width: 99.5%;
         position: absolute;
