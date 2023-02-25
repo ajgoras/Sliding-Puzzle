@@ -1,3 +1,8 @@
 .DS_Store
 .vscode
 notes
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/SlidingPuzzle.iml
+/.idea/vcs.xml
+.idea
