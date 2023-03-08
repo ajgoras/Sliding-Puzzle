@@ -136,19 +136,19 @@ function addUploadedImageToGame(sourceImg) {
 }
 
 addOwnImageLabel.addEventListener('click', () => {
-    let alertMessage = document.createElement('p');
-    alertMessage.innerHTML = "<strong>Info!</strong> <span>The photo should have an aspect ratio 1:1!</span>";
-    alertdiv.appendChild(alertMessage);
+    // let alertMessage = document.createElement('p');
+    // alertMessage.innerHTML = "<strong>Info!</strong> <span>The photo should have an aspect ratio 1:1!</span>";
+    // alertdiv.appendChild(alertMessage);
     click.play();
-    alertdiv.style.display = 'block';
-    setTimeout(() => {
-        alertdiv.style.display = 'none';
-        if (alertdiv.hasChildNodes() == true) {
-            while (alertdiv.firstChild) {
-                alertdiv.removeChild(alertdiv.lastChild);
-            }
-        }
-    }, 5500);
+    // alertdiv.style.display = 'block';
+    // setTimeout(() => {
+    //     alertdiv.style.display = 'none';
+    //     if (alertdiv.hasChildNodes() == true) {
+    //         while (alertdiv.firstChild) {
+    //             alertdiv.removeChild(alertdiv.lastChild);
+    //         }
+    //     }
+    // }, 5500);
 })
 
 imageInput.addEventListener('change', function () {
