@@ -63,7 +63,6 @@ function setImg() {
     setTimeout(() => {
         blocks = document.getElementsByClassName('block');
         for (let i = 0; i < blocks.length-1; i++) {
-            //blocks[i].style.cssText = "background-image: url(maniek.jpg)";
             blocks[i].style.backgroundImage = `url(${photos[activephoto]})`;
         }
         openSlider();
