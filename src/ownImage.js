@@ -114,12 +114,12 @@ function addUploadedImageToGame(sourceImg) {
     }
     document.getElementById("slide").style.backgroundImage = `url(${uploadedImage})`;
     openSlider();
-    alertdiv.style.display = 'none';
-    if (alertdiv.hasChildNodes() == true) {
-        while (alertdiv.firstChild) {
-            alertdiv.removeChild(alertdiv.lastChild);
-        }
-    }    
+    // alertdiv.style.display = 'none';
+    // if (alertdiv.hasChildNodes() == true) {
+    //     while (alertdiv.firstChild) {
+    //         alertdiv.removeChild(alertdiv.lastChild);
+    //     }
+    // }    
     let newDot = document.createElement('div');
     let newDotId = dots.childElementCount + 1;
     newDot.id = 'dot' + newDotId;
