@@ -156,14 +156,14 @@ function renderMainPresentation(infoGameState) {
     })
 
     let observer = new IntersectionObserver(
-      function (entries) {
+    function (entries) {
         if (entries[0].isIntersecting === true && isTimerRunning===false) {
             startIncreasingMoves();
             runCountdown();
             isTimerRunning = true;
         }
-      },
-      { threshold: [1] }
+    },
+    { threshold: [1] }
     );
     observer.observe(timerPresentation);
 
