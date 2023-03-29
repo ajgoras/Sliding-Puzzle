@@ -105,7 +105,7 @@ function solvePuzzle() {
     setTimeout(() => {
         applyWin();
     }, 1900);
-       
+    
 }
 
 
