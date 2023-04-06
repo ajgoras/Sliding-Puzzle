@@ -37,7 +37,7 @@ function deleteUploadedPhotos() {
     ]
     localStorage.removeItem('ownPhotos');
     activephoto = 0;
-    document.getElementById("slide").style.backgroundImage = "url('img/ritka.jpg')";
+    document.getElementById("slide").style.backgroundImage = "url('img/1.jpg')";
     setImg();
     localStorage.removeItem('activePhoto');
 }

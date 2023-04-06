@@ -58,7 +58,7 @@ main{
     color: transparent;
     font-size: 25px;
     transition: top 0.22s linear, left 0.22s linear,background-position 0.22s linear;
-    background-image: url(img/ritka.jpg);
+    background-image: url(img/1.jpg);
     background-size: 300px 300px;
     background-repeat: no-repeat;
     z-index: 1;

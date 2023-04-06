@@ -13,12 +13,12 @@ function saveActivePhotoToLs(photoId) {
 }
 
 function setImg1() {
-    document.getElementById("slide").style.backgroundImage = "url('img/ritka.jpg')";
+    document.getElementById("slide").style.backgroundImage = "url('img/1.jpg')";
     activephoto = 0;
     mixingSound.play();
 }
 function setImg2() {
-    document.getElementById("slide").style.backgroundImage = "url('img/maniek.jpg')";
+    document.getElementById("slide").style.backgroundImage = "url('img/2.jpg')";
     activephoto = 1;
     mixingSound.play();
 }
