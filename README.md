@@ -11,8 +11,8 @@ _The game has been created in basic technologies, without the help of additional
 
 ### Features
 
-- Solving your own pictures
-- Cropping or stretching your own picture
+- Solving your own images
+- Cropping or stretching your own image for a non-quadrant image
 - Three levels of difficulty
 - Mixing puzzle functionality
 - Puzzle reset functionality
