@@ -34,4 +34,27 @@ _The game has been created in basic technologies, without the help of additional
 - Enjoy! 🎉
 
 ## Presentation
-Coming soon..
+![Screenshot1](https://raw.githubusercontent.com/ajgoras/Sliding-Puzzle/main/img/screenshots/1.png)
+_default game view_
+\
+\
+![Screenshot2](https://raw.githubusercontent.com/ajgoras/Sliding-Puzzle/main/img/screenshots/2.png)
+_image menu with own photos_
+\
+\
+![Screenshot3](https://raw.githubusercontent.com/ajgoras/Sliding-Puzzle/main/img/screenshots/3.png)
+_difficulty menu with selected hard difficulty_
+\
+\
+![Screenshot4](https://raw.githubusercontent.com/ajgoras/Sliding-Puzzle/main/img/screenshots/4.png)
+_screenshot during the game_
+\
+\
+![Screenshot5](https://raw.githubusercontent.com/ajgoras/Sliding-Puzzle/main/img/screenshots/5.png)
+_personal game records_
+\
+\
+![Screenshot6](https://raw.githubusercontent.com/ajgoras/Sliding-Puzzle/main/img/screenshots/6.png)
+_instructional page_
+
+For more instructions, open the instructional page by clicking the "i" button in the upper left corner of the game
