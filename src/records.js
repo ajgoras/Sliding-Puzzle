@@ -17,8 +17,8 @@ if (
   localStorage.getItem("isGameMixedForHighScore") == null ||
   localStorage.getItem("isGameMixedForHighScore") == "false"
 ) {
-  isGameMixedForHighScore = 'false';
-  localStorage.setItem("isGameMixedForHighScore", 'false');
+  isGameMixedForHighScore = "false";
+  localStorage.setItem("isGameMixedForHighScore", "false");
 }
 
 recordsBtn.addEventListener("click", () => {
@@ -31,14 +31,14 @@ recordsBtn.addEventListener("click", () => {
 });
 
 function addRecordToLocalStorage() {
-  if (isGameMixedForHighScore === 'true') {
+  if (isGameMixedForHighScore === "true") {
     setTimeout(() => {
       localStorage.setItem("movesRecord", movesForRecords);
       localStorage.setItem("timeRecord", timeForRecords);
       clearInterval(monitoringHighScoreInterval);
       updateRecordsInDOM();
-      isGameMixedForHighScore = 'false';
-      localStorage.setItem('isGameMixedForHighScore', 'false');
+      isGameMixedForHighScore = "false";
+      localStorage.setItem("isGameMixedForHighScore", "false");
     }, 500);
   }
 }
@@ -73,8 +73,8 @@ function updateRecordsInDOM() {
 }
 
 function startMonitoringHighScore() {
-  isGameMixedForHighScore = 'true';
-  localStorage.setItem('isGameMixedForHighScore', 'true');
+  isGameMixedForHighScore = "true";
+  localStorage.setItem("isGameMixedForHighScore", "true");
   monitoringHighScoreInterval = setInterval(() => {
     movesForRecords = movesCount;
     timeForRecords = countdownTime;
@@ -82,7 +82,7 @@ function startMonitoringHighScore() {
 }
 
 setTimeout(() => {
-  if (localStorage.getItem('isGameMixedForHighScore')==='true') {
+  if (localStorage.getItem("isGameMixedForHighScore") === "true") {
     startMonitoringHighScore();
   }
 }, 10);
