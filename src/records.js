@@ -65,7 +65,7 @@ function updateRecordsInDOM() {
         "Twój najlepszy czas to " + formatTime(timeForRecords);
     } else {
       recordsDiv.children[0].innerText =
-        "Your less number of moves is " + movesForRecords;
+        "Your least number of moves is " + movesForRecords;
       recordsDiv.children[1].innerText =
         "Your best time is " + formatTime(timeForRecords);
     }
