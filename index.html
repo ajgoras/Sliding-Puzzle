@@ -1,132 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;"/>
-    <title>Sliding Puzzle</title>
-    <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;" />
+  <title>Sliding Puzzle</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div id="gameInfoDiv" class="opacity0">
-        <div id="gameInfoDivInside">
-            <div id="gameInfoDivInsideInside">
-                <button id="closeInfoButton">X</button>
-                <iframe src="infoPage.html"></iframe>
-            </div>
-        </div>
+  <div id="gameInfoDiv" class="opacity0">
+    <div id="gameInfoDivInside">
+      <div id="gameInfoDivInsideInside">
+        <button id="closeInfoButton">X</button>
+        <iframe src="infoPage.html"></iframe>
+      </div>
     </div>
-    <div id="backgrounddiv" class="background" aria-hidden="true">
-        <div class="background_ball"></div>
-        <div class="background_ball"></div>
-        <div class="background_ball"></div>
+  </div>
+  <div id="backgrounddiv" class="background" aria-hidden="true">
+    <div class="background_ball"></div>
+    <div class="background_ball"></div>
+    <div class="background_ball"></div>
+  </div>
+  <div id="langButtondiv">
+    <button class="revealtime" id="infoButton">i</button>
+    <button class="revealtime" id="langButton">
+      <div id="plendiv">
+        <p>PL</p>
+        <p>EN</p>
+      </div>
+      <span id="langSpan">Language</span>
+      <div class="icon"></div>
+    </button>
+  </div>
+  <div id="colorPickerBtndiv">
+    <button class="revealtime" id="colorPickerBtn">🎨</button>
+    <div id="colors" class="invisible">
+      <div id="greenBlueCircle" class="colorCircle active"></div>
+      <div id="lightBluePinkCircle" class="colorCircle"></div>
+      <div id="darkGreenGoldCircle" class="colorCircle"></div>
+      <div id="darkNavyGrayCircle" class="colorCircle"></div>
+      <div id="lightGrayCircle" class="colorCircle"></div>
     </div>
-    <div id="langButtondiv">
-        <button class="revealtime" id="infoButton">i</button>
-        <button class="revealtime" id="langButton">
-            <div id="plendiv">
-                <p>PL</p>
-                <p>EN</p>
-            </div>
-            <span id="langSpan">Language</span>
-            <div class="icon"></div>
-        </button>
+  </div>
+  <div id="recordsBtndiv">
+    <button class="revealtime" id="recordsBtn">🏆</button>
+  </div>
+  <div id="menudiv" class="revealtime">
+    <button id="selectImgBtn">Image Menu</button>
+    <button id="difficultyBtn">Difficulty</button>
+    <button id="mixBtn">Mix Puzzle</button>
+    <button id="resetPuzzleBtn">Reset Puzzle</button>
+  </div>
+  <div id="difficultydiv">
+    <button id="easyBtn">Easy</button>
+    <button id="mediumBtn">Medium</button>
+    <button id="hardBtn">Hard</button>
+  </div>
+  <div id="slider">
+    <i class="arrow" id="arrow-left"></i>
+    <div id="slides-container">
+      <div id="slide" class="slide active"></div>
     </div>
-    <div id="colorPickerBtndiv">
-        <button class="revealtime" id="colorPickerBtn">🎨</button>
-        <div id="colors" class="invisible">
-            <div id="greenBlueCircle" class="colorCircle active"></div>
-            <div id="lightBluePinkCircle" class="colorCircle"></div>
-            <div id="darkGreenGoldCircle" class="colorCircle"></div>
-            <div id="darkNavyGrayCircle" class="colorCircle"></div>
-            <div id="lightGrayCircle" class="colorCircle"></div>
-        </div>
+    <i class="arrow" id="arrow-right"></i>
+  </div>
+  <div id="dots">
+    <div id="dot1" class="dot"></div>
+    <div id="dot2" class="dot"></div>
+  </div>
+  <div id="selectBtndiv">
+    <button id="selectBtn">Select</button>
+    <label for="imgInput" id="imgInputStyle">
+      <p>Add Own Image</p>
+    </label>
+    <input type="file" id="imgInput">
+    <button id="deleteUploadedPhotosBtn">Delete Your Photos</button>
+  </div>
+  <div id="ownPhotosWarningdiv">
+    <p id="ownPhotosWarningParagraph">You can't add more own images!</p>
+  </div>
+  <div id="imageAspectRatiodiv">
+    <div>
+      <p id="imageAspectRatiodivText1">Image is not square</p>
+      <p id="imageAspectRatiodivText2">Select operation</p>
     </div>
-    <div id="recordsBtndiv">
-        <button class="revealtime" id="recordsBtn">🏆</button>
+    <button id="stretchImageBtn">Stretch</button>
+    <button id="cropImageBtn">Crop</button>
+  </div>
+  <div id="maindiv" class="revealtime2">
+    <div class="fade" id="game">
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block" id="emptyBlock"></div>
     </div>
-    <div id="menudiv" class="revealtime">
-        <button id="selectImgBtn">Image Menu</button>
-        <button id="difficultyBtn">Difficulty</button>
-        <button id="mixBtn">Mix Puzzle</button>
-        <button id="resetPuzzleBtn">Reset Puzzle</button>
+    <div id="winInfodiv">
+      <p id="winInfo" class="invisible">YOU WIN!</p>
     </div>
-    <div id="difficultydiv">
-        <button id="easyBtn">Easy</button>
-        <button id="mediumBtn">Medium</button>
-        <button id="hardBtn">Hard</button>
-    </div>
-    <div id="slider">
-        <i class="arrow" id="arrow-left"></i>
-        <div id="slides-container">
-            <div id="slide" class="slide active"></div>
-        </div>
-        <i class="arrow" id="arrow-right"></i>
-    </div>
-    <div id="dots">
-        <div id="dot1" class="dot"></div>
-        <div id="dot2" class="dot"></div>
-    </div>
-    <div id="selectBtndiv">
-        <button id="selectBtn">Select</button>
-        <label for="imgInput" id="imgInputStyle">
-            <p>Add Own Image</p>
-        </label>
-        <input type="file" id="imgInput">
-        <button id="deleteUploadedPhotosBtn">Delete Your Photos</button>
-    </div>
-    <div id="ownPhotosWarningdiv">
-        <p id="ownPhotosWarningParagraph">You can't add more own images!</p>
-    </div>
-    <div id="imageAspectRatiodiv">
-        <div>
-            <p id="imageAspectRatiodivText1">Image is not square</p>
-            <p id="imageAspectRatiodivText2">Select operation</p>
-        </div>
-        <button id="stretchImageBtn">Stretch</button>
-        <button id="cropImageBtn">Crop</button>
-    </div>
-    <div id="maindiv" class="revealtime2">
-        <div class="fade" id = "game">
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block"></div>
-            <div class="block" id="emptyBlock"></div>
-        </div>
-        <div id="winInfodiv">
-            <p id="winInfo" class="invisible">YOU WIN!</p>
-        </div>
-    </div>
-    <div id="statisticsDiv" class="revealtime3">
-        <p id="moves">Moves: 0</p>
-        <p id="timer">Time: 0:00</p>
-    </div>
-    <div id="recordsDiv" class="opacity0WithTranslate">
-        <p>Your best number of moves on {difficulty} difficulty</p>
-        <p>Your best time on {difficulty} difficulty</p>
-    </div>
-    <div id="photos">
-        <img id="photo0" src="img/1.jpg" alt="default-photo">
-        <img id="photo1" src="img/2.jpg" alt="secondary-photo">
-    </div>
-    <script src="src/game.js"></script>
-    <script src="src/checkWin.js"></script>
-    <script src="src/mixing.js"></script>
-    <script src="src/slider.js"></script>
-    <script src="src/revealing.js"></script>
-    <script src="src/ownImage.js"></script>
-    <script src="src/difficulty.js"></script>
-    <script src="src/loadGame.js"></script>
-    <script src="src/moves.js"></script>
-    <script src="src/timer.js"></script>
-    <script src="src/language.js"></script>
-    <script src="src/info.js"></script>
-    <script src="src/colorPicker.js"></script>
-    <script src="src/records.js"></script>
+  </div>
+  <div id="statisticsDiv" class="revealtime3">
+    <p id="moves">Moves: 0</p>
+    <p id="timer">Time: 0:00</p>
+  </div>
+  <div id="recordsDiv" class="opacity0WithTranslate">
+    <p>Your best number of moves on {difficulty} difficulty</p>
+    <p>Your best time on {difficulty} difficulty</p>
+  </div>
+  <div id="photos">
+    <img id="photo0" src="img/1.jpg" alt="default-photo">
+    <img id="photo1" src="img/2.jpg" alt="secondary-photo">
+  </div>
+  <script src="src/game.js"></script>
+  <script src="src/checkWin.js"></script>
+  <script src="src/mixing.js"></script>
+  <script src="src/slider.js"></script>
+  <script src="src/revealing.js"></script>
+  <script src="src/ownImage.js"></script>
+  <script src="src/difficulty.js"></script>
+  <script src="src/loadGame.js"></script>
+  <script src="src/moves.js"></script>
+  <script src="src/timer.js"></script>
+  <script src="src/language.js"></script>
+  <script src="src/info.js"></script>
+  <script src="src/colorPicker.js"></script>
+  <script src="src/records.js"></script>
 </body>
+
 </html>
