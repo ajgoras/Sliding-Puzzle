@@ -1,10 +1,13 @@
 # Sliding Puzzle
 
----
 
 ###### _Responsive sliding puzzle game created only in HTML, CSS and JavaScript._
 \
-_The game has been created in basic technologies, without the help of additional libraries or frameworks. The game gives you the possibility to solve existing or your own photos at different levels of difficulty on desktop or mobile devices. The application uses local storage to store every information about the game so that when the game is closed and relaunched, it is possible to continue the gameplay._
+_The game has been created in basic technologies, without the help of additional libraries or frameworks. This game gives you the possibility to solve existing or your own photos at different levels of difficulty on desktop or mobile devices. The application uses local storage to store every information about the game so that when the game is closed and relaunched, it is possible to continue the gameplay._
+
+### Live Link:
+
+[Sliding puzzle live link](https://theslidingpuzzlegame.netlify.app/)
 
 ### Features
 
@@ -19,10 +22,6 @@ _The game has been created in basic technologies, without the help of additional
 - Instructional page
 - Various color themes
 - Monitoring personal game records
-
-### Live Link:
-
-[Sliding puzzle live link](https://theslidingpuzzlegame.netlify.app/)
 
 ### Tech:
 
