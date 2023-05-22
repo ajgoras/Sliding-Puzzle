@@ -41,7 +41,10 @@ function changeDifficulty(diff) {
         gameField.classList.toggle("fade");
         statisticsDiv.classList.toggle("fade");
       }, 300);
+      easyBtn.classList.add('active-difficulty');
     }, 300);
+    mediumBtn.classList.remove('active-difficulty');
+    hardBtn.classList.remove('active-difficulty');
   }
 
   if (diff == "medium") {
@@ -80,7 +83,10 @@ function changeDifficulty(diff) {
         gameField.classList.toggle("fade");
         statisticsDiv.classList.toggle("fade");
       }, 300);
+      mediumBtn.classList.add('active-difficulty');
     }, 300);
+    easyBtn.classList.remove('active-difficulty');
+    hardBtn.classList.remove('active-difficulty');
   }
 
   if (diff == "hard") {
@@ -150,7 +156,10 @@ function changeDifficulty(diff) {
         gameField.classList.toggle("fade");
         statisticsDiv.classList.toggle("fade");
       }, 300);
+      hardBtn.classList.add('active-difficulty');
     }, 300);
+    easyBtn.classList.remove('active-difficulty');
+    mediumBtn.classList.remove('active-difficulty');
   }
 }
 

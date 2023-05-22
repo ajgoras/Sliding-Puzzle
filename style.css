@@ -481,6 +481,10 @@ iframe{
     margin-left: 15px;
 }
 
+.active-difficulty{
+    border: #aeaeaef8 solid 2px;
+}
+
 #slider{
     display: none;
     justify-content: center;
