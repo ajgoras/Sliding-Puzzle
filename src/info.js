@@ -30,7 +30,7 @@ function closeGameInfo() {
   setTimeout(() => {
     everything.forEach((e) => {
       e.classList.remove("opacity0");
-      if (e.id == "gameInfoDiv") {
+      if (e.id == "gameInfoDiv" || e.id == 'firstVisitInfoDiv') {
         e.classList.add("opacity0");
       }
     });

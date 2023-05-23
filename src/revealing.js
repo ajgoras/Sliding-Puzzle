@@ -18,6 +18,13 @@ function revealtime3() {
   }
 }
 
+function revealtimeOnlyShow() {
+  var elements = document.getElementsByClassName("revealtimeOnlyShow");
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].classList.add("delayed");
+  }
+}
+
 setTimeout(() => {
   revealtime();
 }, 300);
@@ -27,6 +34,10 @@ setTimeout(() => {
 setTimeout(() => {
   revealtime3();
 }, 1250);
+
+setTimeout(() => {
+  revealtimeOnlyShow();
+}, 850);
 
 setTimeout(() => {
   scroll(0, 0);

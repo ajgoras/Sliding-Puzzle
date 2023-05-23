@@ -11,6 +11,31 @@
 </head>
 
 <body>
+  <div id="firstVisitInfoDiv" class="invisible">
+    <div id="firstVisitHelloDiv">
+      <div id="firstVisitSkipButtonContainer">
+        <button id="firstVisitSkipButton" class="revealtimeOnlyShow">Skip</button>
+      </div>
+      <h2 class="revealtime">Hello!</h2>
+      <h3 class="revealtime2">It looks like you are here for the first time</h3>
+      <h3 class="revealtime2">Choose your language</h3>
+      <button id="firstVisitENButton" class="revealtime3">EN</button>
+      <button id="firstVisitPLButton" class="revealtime3">PL</button>
+    </div>
+    <div id="firstVisitButtonPresentationDiv" class="opacity0 visibilityHidden">
+      <div>
+        <h4>Click the button that looks like this to open a page with instructions</h4>
+        <button id="firstVisitInfoButton">i</button>
+        <img src="img/colorPaletteButtonImg.png" id="firstVisitColorPickerBtn" class="invisible"></img>
+        <img src="img/langButtonImg.png" id="firstVisitLanguageButton" class="invisible"></img>
+        <h4>It is located in the upper left corner of the game</h4>
+        <h4>There you will learn all the information about the game</h4>
+      </div>
+    </div>
+    <div id="firstVisitOkButtonDiv" class="opacity0 visibilityHidden">
+      <button>OK</button>
+    </div>
+  </div>
   <div id="gameInfoDiv" class="opacity0">
     <div id="gameInfoDivInside">
       <div id="gameInfoDivInsideInside">
@@ -131,6 +156,7 @@
   <script src="src/info.js"></script>
   <script src="src/colorPicker.js"></script>
   <script src="src/records.js"></script>
+  <script src="src/firstVisit.js"></script>
 </body>
 
 </html>

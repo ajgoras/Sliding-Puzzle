@@ -60,6 +60,86 @@ body{
     );
 }
 
+#firstVisitInfoDiv{
+    position: absolute;
+	z-index: 2; /* !! */
+    background-color: rgba(0, 0, 0, 0.829);
+    color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    transition: all .25s ease;
+}
+
+#firstVisitHelloDiv{
+	padding: 0 70px 0 70px;
+	position: relative;
+    text-align: center;
+	top: 110px;
+}
+#firstVisitHelloDiv h2{
+	margin-bottom: 10px;
+}
+#firstVisitHelloDiv button{
+	margin: 15px 2px 0px 2px;
+	height: 30px;
+	width: 45px;
+}
+#firstVisitSkipButtonContainer{
+    position: relative;
+    top: -50px;
+	text-align: end;
+}
+
+#firstVisitButtonPresentationDiv{
+	padding: 0 70px 0 70px;
+	position: relative;
+	text-align: center;
+	top: 150px;
+    transition: all .25s ease;
+}
+#firstVisitButtonPresentationDiv:nth-child(2) button{
+	pointer-events: none;
+	user-select: none;
+	margin: 10px 0 10px 0;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 21px;
+    border-radius: 11px;
+    margin-left: 10px;
+    width: 27px;
+    height: 27px;
+}
+
+#firstVisitOkButtonDiv{
+	position: relative;
+	text-align: center;
+	top: 200px;
+}
+
+#firstVisitOkButtonDiv button{
+	margin-top: 10px;
+	height: 35px;
+	width: 50px;
+}
+#firstVisitInfoButton{
+    position: relative;
+    left: -5px;
+}
+
+#firstVisitLanguageButton{
+    margin-top: 10px;
+    height: 30px;
+    width: 50px;
+    user-select: none;
+    pointer-events: none;
+}
+#firstVisitColorPickerBtn{
+    margin-top: 10px;
+    height: 40px;
+    width: 40px;
+    user-select: none;
+    pointer-events: none;
+}
+
 .background {
     height: 100%;
     left: 0;
@@ -711,6 +791,12 @@ input[type="file"] {
     display: none !important;
 }
 
+.visibilityHidden{
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
 .opacity0{
     opacity: 0 !important;
 }
@@ -733,7 +819,11 @@ input[type="file"] {
     opacity: 0;
     transition: all 0.9s cubic-bezier(0.075, 0.52, 0.165, 1);
 }
-.revealtime.delayed, .revealtime2.delayed, .revealtime3.delayed{
+.revealtimeOnlyShow{
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.075, 0.52, 0.165, 1);
+}
+.revealtime.delayed, .revealtime2.delayed, .revealtime3.delayed, .revealtimeOnlyShow.delayed{
     transform: translateY(0px);
     opacity: 1;
 }
@@ -780,6 +870,12 @@ input[type="file"] {
         width: 19vw;
         margin-left: 12px;
     }
+	#firstVisitHelloDiv{
+		padding: 0 50px 0 50px;
+	}
+	#firstVisitButtonPresentationDiv{
+		padding: 0 50px 0 50px;
+	}
 }
 
 @media only screen and (max-width: 490px) {
@@ -789,6 +885,12 @@ input[type="file"] {
     #recordsBtn{
         margin-top: 55px;
     }
+	#firstVisitHelloDiv{
+		padding: 0 40px 0 40px;
+	}
+	#firstVisitButtonPresentationDiv{
+		padding: 0 40px 0 40px;
+	}
 }
 
 @media only screen and (max-width: 380px){
@@ -806,4 +908,10 @@ input[type="file"] {
         margin-top: 47px;
         border-radius: 7px;
     }
+	#firstVisitHelloDiv{
+		padding: 0 30px 0 30px;
+	}
+	#firstVisitButtonPresentationDiv{
+		padding: 0 30px 0 30px;
+	}
 }
