@@ -39,9 +39,9 @@ function changeLanguageTo(lang) {
       "Kliknij na przycisk zmiany poziomu trudności, aby wybrać poziom trudności i zmienić liczbę puzzli.";
     paragraphs[4].innerText = "Kliknij przycisk Mieszaj Puzzle i pomieszaj je.";
     paragraphs[5].innerText =
-      "Kliknij przycisk Resetuj Puzzle, aby przywrócić klocki na ich pierwotne miejsce.";
+      "Kliknij przycisk Resetuj Puzzle, aby przywrócić bloki na ich pierwotne miejsce.";
     paragraphs[6].innerText =
-      "Każdy twój ruch jest zapisywany, zwiększając ich liczbę. Od momentu przesunięcia pierwszego klocka rozpoczyna się odliczanie czasu. Działaj mądrze i szybko, pobijaj własne rekordy.";
+      "Każdy twój ruch jest zapisywany, zwiększając ich liczbę. Od momentu przesunięcia pierwszego bloku rozpoczyna się odliczanie czasu. Działaj mądrze i szybko, pobijaj własne rekordy.";
     paragraphs[12].innerText =
       "W pamięci przeglądarki zapisywany jest stan gry, w tym ustawienia, własne zdjęcia, poziom trudności, czas gry czy liczba ruchów.";
     paragraphs[13].innerText =
