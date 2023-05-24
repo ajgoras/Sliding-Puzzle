@@ -921,6 +921,15 @@ input[type="file"] {
   opacity: 1;
 }
 
+html,
+body {
+  min-height: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+  min-width: 100% !important;
+  width: 100% !important;
+}
+
 @media only screen and (max-width: 590px) {
   #colorPickerBtndiv {
     margin-left: 10px;
