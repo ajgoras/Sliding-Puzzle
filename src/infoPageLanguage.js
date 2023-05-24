@@ -75,6 +75,8 @@ function changeLanguageTo(lang) {
       "Click on the Reset Puzzle button to return the blocks to their original place.";
     paragraphs[6].innerText =
       "Each of your moves is saved, increasing the number of moves. From the moment you move the first block, the timer starts counting down. Act smart and fast and break your records.";
+    paragraphs[12].innerText =
+      "The state of the game is stored in the browser's memory, including your settings, your own pictures, difficulty level, game time or number of moves.";
     paragraphs[13].innerText =
       "You can always close the game and return to it at any time.";
     isTimerRunning
