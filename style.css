@@ -1007,7 +1007,7 @@ body {
   }
 
   #firstVisitHelloDiv {
-    top: 30px;
+    top: 20px;
   }
 
   #firstVisitSkipButtonContainer {
@@ -1015,11 +1015,11 @@ body {
   }
 
   #firstVisitButtonPresentationDiv {
-    top: 90px;
+    top: 65px;
   }
 
   #firstVisitOkButtonDiv {
-    top: 120px;
+    top: 95px;
   }
 }
 
