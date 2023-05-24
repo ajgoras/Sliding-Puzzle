@@ -891,6 +891,20 @@ input[type="file"] {
 	#firstVisitButtonPresentationDiv{
 		padding: 0 40px 0 40px;
 	}
+    #firstVisitHelloDiv{
+        top: 30px;
+    }
+    #firstVisitSkipButtonContainer{
+        top: -20px;
+    }
+    
+    #firstVisitButtonPresentationDiv{
+        top: 90px;
+    }
+    
+    #firstVisitOkButtonDiv{
+        top: 120px;
+    }
 }
 
 @media only screen and (max-width: 380px){
@@ -914,4 +928,24 @@ input[type="file"] {
 	#firstVisitButtonPresentationDiv{
 		padding: 0 30px 0 30px;
 	}
+    #firstVisitInfoDiv{
+        font-size: 95%;
+    }
+    #firstVisitInfoDiv button{
+        font-size: 85%;
+    }
+    #firstVisitHelloDiv{
+        top: 10px;
+    }
+    #firstVisitSkipButtonContainer{
+        top: -7px;
+    }
+    
+    #firstVisitButtonPresentationDiv{
+        top: 70px;
+    }
+    
+    #firstVisitOkButtonDiv{
+        top: 100px;
+    }
 }
